@@ -689,11 +689,11 @@
 
                     <div id="quizQuestions">
                         <div class="quiz-progress">
-                            <span>Question <span id="quizCurrentQ">1</span> of <span id="quizTotalQ">10</span></span>
-                            <span id="quizPercent">10% complete</span>
+                            <span>Question <span id="quizCurrentQ">1</span> of <span id="quizTotalQ">15</span></span>
+                            <span id="quizPercent">7% complete</span>
                         </div>
                         <div class="quiz-progress-bar">
-                            <div class="quiz-progress-fill" id="quizProgressFill" style="width: 10%"></div>
+                            <div class="quiz-progress-fill" id="quizProgressFill" style="width: 7%"></div>
                         </div>
 
                         <div class="quiz-question" id="quizQuestion">Loading question...</div>
@@ -910,25 +910,23 @@
                 const button = document.createElement('button');
                 button.className = 'quiz-option';
                 button.textContent = option.text;
-                button.onclick = () => selectQuizOption(option.value, option.points);
+                button.onclick = () => selectQuizOption(option.value, option.points, option.secondary);
                 optionsContainer.appendChild(button);
             });
         }
 
-        function selectQuizOption(value, points) {
+        function selectQuizOption(value, points, secondary) {
             if (!quizAnswers[value]) {
                 quizAnswers[value] = 0;
             }
             quizAnswers[value] += points;
             
             // Also track secondary philosophy if present
-            const question = quizQuestions[currentQuizQuestion];
-            const selectedOption = question.options.find(opt => opt.value === value);
-            if (selectedOption && selectedOption.secondary) {
-                if (!quizAnswers[selectedOption.secondary]) {
-                    quizAnswers[selectedOption.secondary] = 0;
+            if (secondary) {
+                if (!quizAnswers[secondary]) {
+                    quizAnswers[secondary] = 0;
                 }
-                quizAnswers[selectedOption.secondary] += 1;
+                quizAnswers[secondary] += 1;
             }
             
             currentQuizQuestion++;
@@ -998,9 +996,9 @@
             const contemporaryScores = {};
             
             Object.entries(quizAnswers).forEach(([key, value]) => {
-                if (profiles[key].isFounder) {
+                if (profiles[key] && profiles[key].isFounder) {
                     founderScores[key] = value;
-                } else {
+                } else if (profiles[key]) {
                     contemporaryScores[key] = value;
                 }
             });
@@ -1111,60 +1109,6 @@
 
                 <button class="quiz-restart-btn" onclick="startQuiz()">Take Quiz Again</button>
             `;
-        }: {
-                    name: "Ecological Awareness (Rachel Carson)",
-                    description: "You align with Rachel Carson's philosophy of ecological interconnection and precaution. You recognize that everything in nature is connected, and human interventions can have far-reaching, unintended consequences. You advocate for rigorous science, careful study of long-term impacts, and questioning technologies that promise progress but may cause hidden harm. You believe in protecting the web of life and maintaining ecological balance.",
-                    approach: "Precautionary and interconnected thinking"
-                }
-            };
-
-            const sortedResults = Object.entries(quizAnswers).sort((a, b) => b[1] - a[1]);
-            const topResult = sortedResults[0] ? sortedResults[0][0] : 'leopold';
-            const result = profiles[topResult];
-
-            const names = {
-                muir: "Muir (Preservationist)",
-                pinchot: "Pinchot (Conservationist)",
-                leopold: "Leopold (Land Ethic)",
-                carson: "Carson (Ecological Awareness)"
-            };
-
-            let scoresHtml = '';
-            const maxScore = sortedResults[0][1];
-            sortedResults.forEach(([key, value]) => {
-                const percentage = (value / maxScore) * 100;
-                scoresHtml += `
-                    <div class="score-item">
-                        <div class="score-label">
-                            <span class="score-name">${names[key]}</span>
-                            <span class="score-points">${value} points</span>
-                        </div>
-                        <div class="score-bar">
-                            <div class="score-bar-fill" style="width: ${percentage}%"></div>
-                        </div>
-                    </div>
-                `;
-            });
-
-            document.getElementById('quizQuestions').style.display = 'none';
-            document.getElementById('quizResults').style.display = 'block';
-            document.getElementById('quizResults').innerHTML = `
-                <h2 class="quiz-result-header">${result.name}</h2>
-                <p class="quiz-result-description">${result.description}</p>
-                <p class="quiz-result-approach"><strong>Your Approach:</strong> ${result.approach}</p>
-
-                <div class="quiz-scores">
-                    <h3>Your Score Distribution:</h3>
-                    ${scoresHtml}
-                </div>
-
-                <div class="quiz-note">
-                    <strong>Remember:</strong>
-                    <p>Most people blend multiple philosophies! These pioneers themselves influenced each other and evolved their thinking. Your results show which perspectives resonate most with you, but effective conservation often requires integrating multiple viewpoints.</p>
-                </div>
-
-                <button class="quiz-restart-btn" onclick="startQuiz()">Take Quiz Again</button>
-            `;
         }
 
         // Initialize quiz on load
@@ -1174,7 +1118,7 @@
         const QUESTION_FILES = [
             { id: 'conservation-biology', name: 'Conservation Biology', path: 'data/conservation-biology.json' },
             // Add more files like this:
-            { id: 'ecology', name: 'Ecology', path: 'data/ecology.json' },
+            // { id: 'ecology', name: 'Ecology', path: 'data/ecology.json' },
             // { id: 'mixed', name: 'Mixed Topics', path: 'data/mixed.json' }
         ];
 
