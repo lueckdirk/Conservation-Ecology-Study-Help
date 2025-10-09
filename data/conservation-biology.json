@@ -1,0 +1,773 @@
+{
+  "ch1-state-of-planet": [
+    {
+      "type": "multiple-choice",
+      "question": "What percentage of habitable land has been converted by humans?",
+      "options": ["50%", "60%", "75%", "90%"],
+      "answer": "75%",
+      "explanation": "Humans have converted 75% of habitable land, with 70-80% of natural biomes potentially lost by 2050."
+    }
+  ],
+  "ch10-invasive-species": [
+    {
+      "type": "multiple-choice",
+      "question": "Which country has the highest number of invasive alien species (IAS)?",
+      "options": ["Australia", "New Zealand", "USA", "South Africa"],
+      "answer": "USA",
+      "explanation": "USA has 523 IAS, followed by New Zealand (329), Australia (322), Cuba (318), and South Africa (208)."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "An _____ species is found outside its natural range due to human activity, while an _____ alien species causes ecological, economic, or health harm.",
+      "answer": "alien, invasive",
+      "acceptableAnswers": ["alien, invasive"],
+      "explanation": "Alien species are non-native; invasive alien species (IAS) are alien species that cause harm."
+    },
+    {
+      "type": "short-answer",
+      "question": "What are the four hypotheses explaining IAS success?",
+      "answer": "Enemy Release Hypothesis (fewer natural predators), Novel Weapons Hypothesis (unique traits give competitive edge), Empty Niche Hypothesis (exploit unused resources), Biotic Resistance Hypothesis (native species resist invasion)",
+      "keyPoints": ["Enemy Release", "Novel Weapons", "Empty Niche", "Biotic Resistance"]
+    },
+    {
+      "type": "true-false",
+      "question": "Most alien species successfully establish and become invasive after introduction.",
+      "answer": false,
+      "explanation": "False. Most alien species die before or shortly after introduction. Survivors face small population constraints and environmental pressures."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What was the global cost of invasive alien species in 2019?",
+      "options": ["$100 billion", "$250 billion", "$423 billion", "$600 billion"],
+      "answer": "$423 billion",
+      "explanation": "The global cost was $423 billion in 2019, with costs quadrupling every decade since 1970."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "IAS are responsible for _____% of global extinctions.",
+      "answer": "60",
+      "acceptableAnswers": ["60", "60%"],
+      "explanation": "IAS are responsible for 1,215 local extinctions and 60% of global extinctions."
+    },
+    {
+      "type": "short-answer",
+      "question": "What are the three phases of IAS spread after establishment?",
+      "answer": "Lag Phase (slow initial growth), Exponential Phase (rapid expansion), Saturation Phase (growth stabilizes as carrying capacity is approached)",
+      "keyPoints": ["Lag", "Exponential", "Saturation"]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What percentage of U.S. food crops are nonnative species?",
+      "options": ["50%", "75%", "90%", "98%"],
+      "answer": "98%",
+      "explanation": "98% of U.S. food crops are nonnative, showing that IAS can have positive economic value."
+    },
+    {
+      "type": "true-false",
+      "question": "The brown tree snake introduction in Guam had minimal impact on native bird populations.",
+      "answer": false,
+      "explanation": "False. The brown tree snake caused forest bird extinctions in Guam, dramatically reducing native bird populations."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "The discovery rate of new IAS peaked in _____ with 585 new species identified.",
+      "answer": "1996",
+      "acceptableAnswers": ["1996"],
+      "explanation": "IAS discovery rate peaked in 1996 with 585 new invasive species identified."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which of these is an example of intentional IAS introduction?",
+      "options": ["Zebra mussels", "Rats on ships", "European starlings", "Giant salvinia"],
+      "answer": "European starlings",
+      "explanation": "European starlings were intentionally introduced. Unintentional introductions include rats, zebra mussels, and giant salvinia."
+    },
+    {
+      "type": "short-answer",
+      "question": "What are the three steps in IAS management?",
+      "answer": "Horizon Scanning (identify potential threats), Risk Assessment (evaluate likelihood and impact), Risk Management Options (develop tools, policies, and techniques)",
+      "keyPoints": ["Horizon Scanning", "Risk Assessment", "Risk Management"]
+    },
+    {
+      "type": "true-false",
+      "question": "Biotic homogenization caused by IAS increases beta diversity.",
+      "answer": false,
+      "explanation": "False. Biotic homogenization REDUCES beta diversity by making ecosystems more similar to each other."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "IAS numbers have been increasing _____ since 1800.",
+      "answer": "exponentially",
+      "acceptableAnswers": ["exponentially", "exponential"],
+      "explanation": "IAS numbers have increased exponentially since 1800 due to increased global trade and transport."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which organization publishes strategies and toolkits for IAS management globally?",
+      "options": ["IUCN", "GISP", "WWF", "CITES"],
+      "answer": "GISP",
+      "explanation": "The Global Invasive Species Programme (GISP) publishes strategies and supports regional, national, and international efforts."
+    }
+  ],
+  "mixed-comprehensive": [
+    {
+      "type": "multiple-choice",
+      "question": "Which conservation value recognizes that nature has worth simply by existing?",
+      "options": ["Instrumental value", "Intrinsic value", "Option value", "Relational value"],
+      "answer": "Intrinsic value",
+      "explanation": "Intrinsic value means nature has inherent worth independent of human use or benefit."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "The _____ gradient shows that species richness increases from poles to equator.",
+      "answer": "latitudinal",
+      "acceptableAnswers": ["latitudinal", "latitude"],
+      "explanation": "The latitudinal gradient is one of the most fundamental patterns in biodiversity."
+    },
+    {
+      "type": "short-answer",
+      "question": "According to Island Biogeography Theory, what two factors determine species richness on islands?",
+      "answer": "Island size (larger islands have lower extinction rates) and distance from mainland (closer islands have higher immigration rates)",
+      "keyPoints": ["size", "distance", "extinction", "immigration"]
+    },
+    {
+      "type": "true-false",
+      "question": "The Anthropocene is characterized by unprecedented human impact on Earth's systems.",
+      "answer": true,
+      "explanation": "True. The Anthropocene represents an era of unprecedented human dominance affecting climate, biodiversity, and ecosystems."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does IUCN stand for?",
+      "options": ["International Union for Conservation of Nature", "International Unit for Conservation Needs", "Independent Union of Conservation Nations", "Integrated Union for Climate Neutrality"],
+      "answer": "International Union for Conservation of Nature",
+      "explanation": "IUCN (International Union for Conservation of Nature) maintains the Red List of Threatened Species."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "In metapopulation dynamics, persistence depends on _____ being greater than _____.",
+      "answer": "immigration, extinction",
+      "acceptableAnswers": ["immigration, extinction", "colonization, extinction"],
+      "explanation": "Metapopulations persist when the immigration rate exceeds the extinction rate across patches."
+    },
+    {
+      "type": "short-answer",
+      "question": "What is the Millennium Ecosystem Assessment and when was it conducted?",
+      "answer": "A comprehensive assessment of ecosystem services and their importance to human well-being, popularized in the 1990s-2000s through economic valuation and biodiversity-functioning research",
+      "keyPoints": ["ecosystem services", "1990s", "assessment", "human well-being"]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which type of natural selection favors extreme trait values over average?",
+      "options": ["Stabilizing selection", "Directional selection", "Disruptive selection", "Balancing selection"],
+      "answer": "Disruptive selection",
+      "explanation": "Disruptive selection favors extremes, stabilizing favors average, directional favors one extreme."
+    },
+    {
+      "type": "true-false",
+      "question": "Sympatric speciation requires geographic isolation of populations.",
+      "answer": false,
+      "explanation": "False. Sympatric speciation occurs within the same region without geographic isolation (e.g., polyploidy in plants)."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "The organization TRAFFIC monitors _____ wildlife trade globally.",
+      "answer": "legal",
+      "acceptableAnswers": ["legal"],
+      "explanation": "TRAFFIC monitors legal wildlife trade; sustainability depends on species' biological traits and harvest rates."
+    },
+    {
+      "type": "short-answer",
+      "question": "What is the difference between a realm and a biome?",
+      "answer": "A realm is a large region with shared evolutionary history, while a biome is defined by vegetation types (terrestrial) or physical processes (aquatic)",
+      "keyPoints": ["realm", "evolutionary", "biome", "vegetation"]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the main limitation of using the species-area relationship for conservation planning?",
+      "options": ["It's too complex to calculate", "It doesn't account for extinction debt", "It only works for islands", "It requires genetic data"],
+      "answer": "It doesn't account for extinction debt",
+      "explanation": "The species-area relationship has limitations including not accounting for extinction debt and having built-in assumptions."
+    },
+    {
+      "type": "true-false",
+      "question": "Ecosystem engineers like beavers have minimal impact on community structure.",
+      "answer": false,
+      "explanation": "False. Ecosystem engineers like beavers dramatically alter habitats, affecting species composition and diversity."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "The typical scaling factor (z) in the species-area relationship ranges from _____ to _____.",
+      "answer": "0.15, 0.35",
+      "acceptableAnswers": ["0.15, 0.35", "0.15-0.35"],
+      "explanation": "The z-value typically ranges from 0.15 to 0.35, indicating how species richness scales with area."
+    },
+    {
+      "type": "short-answer",
+      "question": "What are three life history traits that increase extinction risk?",
+      "answer": "Large body size (low reproduction, high food needs), Limited dispersal/migration ability, Predictable aggregation patterns that make species vulnerable to harvest",
+      "keyPoints": ["body size", "dispersal", "aggregation", "reproduction"]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which convention established the Aichi Biodiversity Targets in 2010?",
+      "options": ["Kyoto Protocol", "Paris Agreement", "Convention on Biological Diversity", "Ramsar Convention"],
+      "answer": "Convention on Biological Diversity",
+      "explanation": "The Convention on Biological Diversity (1992) established Aichi Biodiversity Targets (2010) and supports UN Sustainable Development Agenda."
+    },
+    {
+      "type": "true-false",
+      "question": "Endemism (species found only in one location) decreases extinction risk.",
+      "answer": false,
+      "explanation": "False. Endemism INCREASES extinction risk because the species exists in only one location—any threat there affects the entire species."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "Approximately _____% of tree species are at risk, with 7,400 threatened by direct exploitation.",
+      "answer": "30",
+      "acceptableAnswers": ["30", "30%"],
+      "explanation": "About 30% of tree species are at risk globally, with 7,400 species threatened by logging and exploitation."
+    },
+    {
+      "type": "short-answer",
+      "question": "What is the competitive exclusion principle?",
+      "answer": "Two species competing for the exact same resources cannot coexist indefinitely—one will outcompete and exclude the other unless they differentiate their niches",
+      "keyPoints": ["two species", "same resources", "cannot coexist", "exclusion"]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which radiation event occurred approximately 542 million years ago?",
+      "options": ["Silurian", "Cambrian", "Triassic", "Cretaceous"],
+      "answer": "Cambrian",
+      "explanation": "The Cambrian explosion (~542 mya) was a major radiation event when most animal phyla appeared."
+    }
+  ]
+},
+    {
+      "type": "fill-in-blank",
+      "question": "Current extinction rates are _____ times higher than prehistoric background rates.",
+      "answer": "100-1000",
+      "acceptableAnswers": ["100-1000", "100 to 1000", "hundred to thousand"],
+      "explanation": "Modern extinction rates are 100-1000× higher than prehistoric rates."
+    },
+    {
+      "type": "short-answer",
+      "question": "What are the main drivers of human population growth in the last 200 years?",
+      "answer": "Agricultural and industrial revolutions, technological advancements, and medical improvements",
+      "keyPoints": ["agricultural revolution", "industrial revolution", "technological", "medical"]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What percentage of wetlands have been lost since 1900?",
+      "options": ["25-30%", "40-50%", "64-71%", "80-85%"],
+      "answer": "64-71%",
+      "explanation": "Wetland loss has accelerated, with 64-71% lost since 1900."
+    },
+    {
+      "type": "true-false",
+      "question": "The Chinese Paddlefish is functionally extinct.",
+      "answer": false,
+      "explanation": "False. The Chinese Paddlefish is completely extinct. The Yangtze River Dolphin is functionally extinct."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "Typical animal populations have declined by approximately _____ in 50 years.",
+      "answer": "1/3",
+      "acceptableAnswers": ["1/3", "one third", "33%", "one-third"],
+      "explanation": "Population decay has reduced typical animal populations by about one-third over 50 years."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which aquifer is being depleted in the Great Plains?",
+      "options": ["Edwards Aquifer", "Ogallala Aquifer", "Floridian Aquifer", "Mahomet Aquifer"],
+      "answer": "Ogallala Aquifer",
+      "explanation": "The Ogallala Aquifer in the Great Plains is experiencing significant depletion."
+    },
+    {
+      "type": "short-answer",
+      "question": "Name at least four 'Seeds of a Good Anthropocene' (reasons for optimism in conservation).",
+      "answer": "Most species still exist somewhere; population growth is slowing; awareness of nature's limits is growing; conservation and prosperity can coexist; conservation science is advancing; human innovation is powerful; conservation is becoming more inclusive and diverse",
+      "keyPoints": ["species exist", "population slowing", "awareness", "prosperity coexist", "science advancing", "innovation", "inclusive"]
+    },
+    {
+      "type": "true-false",
+      "question": "Nearly two-thirds of ocean areas show increased human impact.",
+      "answer": true,
+      "explanation": "True. Nearly 2/3 of ocean areas show increased human impact through warming, acidification, pollution, and dead zones."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "The Indian Rhino population recovered from approximately _____ individuals to a thriving population.",
+      "answer": "200",
+      "acceptableAnswers": ["200", "~200", "about 200"],
+      "explanation": "Grassroots anti-poaching efforts helped the Indian Rhino recover from around 200 individuals."
+    }
+  ],
+  "ch2-rise-of-conservation": [
+    {
+      "type": "multiple-choice",
+      "question": "Who founded the Sierra Club in 1892?",
+      "options": ["Aldo Leopold", "Gifford Pinchot", "John Muir", "Theodore Roosevelt"],
+      "answer": "John Muir",
+      "explanation": "John Muir founded the Sierra Club and championed the preservation ethic."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "Gifford Pinchot was the first chief of the U.S. _____ Service and championed sustainable use of resources.",
+      "answer": "Forest",
+      "acceptableAnswers": ["Forest", "forest"],
+      "explanation": "Gifford Pinchot was the first chief of the U.S. Forest Service and advocated for the Resource Conservation Ethic."
+    },
+    {
+      "type": "short-answer",
+      "question": "What are the three main U.S. conservation philosophies and who championed each?",
+      "answer": "Preservation Ethic (John Muir) - nature has intrinsic value; Resource Conservation Ethic (Gifford Pinchot) - sustainable use; Land Ethic (Aldo Leopold) - ecological and evolutionary perspective",
+      "keyPoints": ["Preservation", "Muir", "Resource Conservation", "Pinchot", "Land Ethic", "Leopold"]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which book by Rachel Carson led to the creation of the EPA and ESA?",
+      "options": ["The Sea Around Us", "Silent Spring", "The Edge of the Sea", "Under the Sea Wind"],
+      "answer": "Silent Spring",
+      "explanation": "Rachel Carson's Silent Spring exposed the dangers of pesticides and led to major environmental legislation."
+    },
+    {
+      "type": "true-false",
+      "question": "The first national park in the world was Yellowstone in the United States.",
+      "answer": false,
+      "explanation": "False. Bogd Khan Mountain in Mongolia (1783) was the first national park. Yellowstone (1872) was the first U.S. national park."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "The Society for Conservation Biology was founded in _____ by Michael Soulé, Paul Ehrlich, and Jared Diamond.",
+      "answer": "1985",
+      "acceptableAnswers": ["1985"],
+      "explanation": "The Society for Conservation Biology was founded in 1985, following the first conference in 1978."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which conservation philosopher wrote 'A Sand County Almanac' in 1949?",
+      "options": ["John Muir", "Rachel Carson", "Aldo Leopold", "Henry David Thoreau"],
+      "answer": "Aldo Leopold",
+      "explanation": "Aldo Leopold's 'A Sand County Almanac' articulated the Land Ethic and influenced the Wilderness Act of 1964."
+    },
+    {
+      "type": "short-answer",
+      "question": "Name three prominent women in early conservation history and their contributions.",
+      "answer": "Rosalie Edge (national parks advocate), Harriet Hemenway (bird protection, Lacey Act 1900), Margaret Murie (wilderness preservation), Rachel Carson (Silent Spring, EPA & ESA)",
+      "keyPoints": ["Edge", "Hemenway", "Murie", "Carson"]
+    },
+    {
+      "type": "true-false",
+      "question": "According to Soulé's normative postulates, biodiversity has only instrumental value for human use.",
+      "answer": false,
+      "explanation": "False. Soulé argued that biodiversity has intrinsic value, independent of human use."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which of these was NOT one of Kareiva & Marvier's (2012) functional postulates?",
+      "options": ["Pristine nature no longer exists", "Nature is fragile and needs total protection", "Human and nature fates are intertwined", "Nature is resilient"],
+      "answer": "Nature is fragile and needs total protection",
+      "explanation": "Kareiva & Marvier argued nature is resilient and conservation must happen in human-altered landscapes."
+    }
+  ],
+  "ch3-biodiversity-concepts": [
+    {
+      "type": "multiple-choice",
+      "question": "Which diversity metric incorporates both species richness AND evenness?",
+      "options": ["Species count", "Simpson's index", "Total abundance", "Genetic diversity"],
+      "answer": "Simpson's index",
+      "explanation": "Simpson and Shannon indices measure both the number of species (richness) and how evenly distributed they are (evenness)."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "_____ diversity refers to local species richness, while _____ diversity refers to turnover between communities.",
+      "answer": "Alpha, beta",
+      "acceptableAnswers": ["Alpha, beta", "alpha, beta"],
+      "explanation": "Alpha = local richness, Beta = turnover, Gamma = regional diversity."
+    },
+    {
+      "type": "short-answer",
+      "question": "What are the three species concepts used in biology?",
+      "answer": "Morphological (physical/biochemical differences), Biological (ability to interbreed), Evolutionary (shared DNA and evolutionary history)",
+      "keyPoints": ["Morphological", "Biological", "Evolutionary", "interbreed", "DNA"]
+    },
+    {
+      "type": "true-false",
+      "question": "Heterozygosity measures the percentage of gene loci with alternative alleles in a population.",
+      "answer": false,
+      "explanation": "False. That describes polymorphism. Heterozygosity is the % of loci where individuals are heterozygous."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What was the result of beaver reintroduction in Scotland?",
+      "options": ["30% decrease in plant diversity", "No measurable change", "50% increase in plant diversity", "Complete ecosystem collapse"],
+      "answer": "50% increase in plant diversity",
+      "explanation": "Beaver reintroduction led to 50% increase in plant diversity, wetland restoration, and wildlife boost."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "_____ are diagrams based on trait similarities, while _____ trees are based on genetic dissimilarities.",
+      "answer": "Phenograms, phylogenetic",
+      "acceptableAnswers": ["Phenograms, phylogenetic", "phenograms, phylogenetic"],
+      "explanation": "Phenograms show functional trait relationships; phylogenetic trees show evolutionary relationships."
+    },
+    {
+      "type": "short-answer",
+      "question": "What are the three main measures of genetic diversity?",
+      "answer": "Allele frequencies, Polymorphism (% of loci with alternative alleles), Heterozygosity (% of loci where individuals are heterozygous)",
+      "keyPoints": ["allele frequencies", "polymorphism", "heterozygosity"]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which food web metric represents the proportion of possible links that are actually realized?",
+      "options": ["Linkage density", "Connectance", "Trophic level", "Species richness"],
+      "answer": "Connectance",
+      "explanation": "Connectance is the proportion of possible links realized in a food web, while linkage density is average links per species."
+    },
+    {
+      "type": "true-false",
+      "question": "Rarefaction curves are used to estimate the total number of species that will be found with additional sampling.",
+      "answer": false,
+      "explanation": "False. Rarefaction curves adjust for sampling differences. Extrapolation curves estimate total species with additional sampling."
+    }
+  ],
+  "ch3-global-patterns": [
+    {
+      "type": "fill-in-blank",
+      "question": "The earliest evidence of life on Earth appeared approximately _____ billion years ago.",
+      "answer": "3.5-4.3",
+      "acceptableAnswers": ["3.5-4.3", "3.5 to 4.3", "3.5", "4.3"],
+      "explanation": "Earliest life evidence dates to 3.5-4.3 billion years ago in Australia, Greenland, and Canada."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which mass extinction was caused by meteor impact, volcanism, and methane release?",
+      "options": ["Ordovician-Silurian", "Devonian", "Permian-Triassic", "Cretaceous"],
+      "answer": "Permian-Triassic",
+      "explanation": "The Permian-Triassic extinction (the 'Great Dying') was caused by meteor impact, volcanism, and methane release."
+    },
+    {
+      "type": "short-answer",
+      "question": "What are the criteria for a biodiversity hotspot?",
+      "answer": "Must have at least 1,500 endemic vascular plant species AND have lost at least 70% of original vegetation (≤30% remaining)",
+      "keyPoints": ["1,500", "endemic", "vascular plants", "30%", "70% lost"]
+    },
+    {
+      "type": "true-false",
+      "question": "Species richness generally decreases from the poles to the equator.",
+      "answer": false,
+      "explanation": "False. Species richness INCREASES from poles to equator. Warmer regions have higher biodiversity."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Approximately how many eukaryotic species have been described?",
+      "options": ["500,000", "1 million", "2.16 million", "8 million"],
+      "answer": "2.16 million",
+      "explanation": "About 2.16 million eukaryotic species are described, but the estimated total exceeds 8 million species."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "The 25 original biodiversity hotspots contain 44% of vascular plant species and 35% of vertebrates on only _____% of Earth's land surface.",
+      "answer": "1.4",
+      "acceptableAnswers": ["1.4", "1.4%"],
+      "explanation": "Biodiversity hotspots pack enormous diversity into just 1.4% of Earth's land surface."
+    },
+    {
+      "type": "short-answer",
+      "question": "What are the four types of speciation?",
+      "answer": "Allopatric (geographic isolation), Peripatric (small isolated populations), Parapatric (partial separation with reduced hybrid fitness), Sympatric (within same region, e.g., polyploidy)",
+      "keyPoints": ["Allopatric", "Peripatric", "Parapatric", "Sympatric"]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "According to Island Biogeography Theory, which islands have the highest species richness?",
+      "options": ["Small and far", "Small and near", "Large and far", "Large and near"],
+      "answer": "Large and near",
+      "explanation": "Large islands support more species (lower extinction), and near islands receive more immigrants (higher colonization)."
+    },
+    {
+      "type": "true-false",
+      "question": "The intermediate disturbance hypothesis suggests that maximum diversity occurs with no disturbance.",
+      "answer": false,
+      "explanation": "False. The intermediate disturbance hypothesis states that moderate disturbance promotes the highest diversity."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "According to the Lotka-Volterra model, species coexist when _____ competition is greater than _____ competition.",
+      "answer": "intraspecific, interspecific",
+      "acceptableAnswers": ["intraspecific, interspecific", "within-species, between-species"],
+      "explanation": "Coexistence occurs when individuals compete more with their own species than with other species."
+    }
+  ],
+  "ch4-5-values-ecosystem-services": [
+    {
+      "type": "multiple-choice",
+      "question": "Which ethical worldview holds that all living beings have inherent value?",
+      "options": ["Anthropocentrism", "Biocentrism", "Ecocentrism", "Utilitarianism"],
+      "answer": "Biocentrism",
+      "explanation": "Biocentrism values all living beings. Anthropocentrism centers on humans. Ecocentrism extends to whole ecosystems."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "Bolivia's Law of the Rights of Mother Earth is an example of recognizing the _____ value of nature.",
+      "answer": "intrinsic",
+      "acceptableAnswers": ["intrinsic"],
+      "explanation": "Intrinsic value means nature has worth simply by existing, independent of human use."
+    },
+    {
+      "type": "short-answer",
+      "question": "What are the four categories of ecosystem services?",
+      "answer": "Supporting services (biomass production, nutrient cycling), Provisioning services (food, water, materials), Regulating services (climate, pollination, pest control), Cultural services (recreation, education, inspiration)",
+      "keyPoints": ["Supporting", "Provisioning", "Regulating", "Cultural"]
+    },
+    {
+      "type": "true-false",
+      "question": "Option value refers to the current use of resources, while nonuse value refers to valuing nature without direct interaction.",
+      "answer": false,
+      "explanation": "False. Option value is preserving resources for FUTURE use. Nonuse value is valuing nature without interaction."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What percentage of flowering plants depend on pollination?",
+      "options": ["45%", "62%", "87%", "98%"],
+      "answer": "87%",
+      "explanation": "87% of flowering plants depend on pollination, making it a critical regulating service."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "NYC chose to conserve the _____ Mountains for natural water purification instead of building treatment plants.",
+      "answer": "Catskill",
+      "acceptableAnswers": ["Catskill", "Catskills"],
+      "explanation": "NYC invested in ecosystem services by conserving the Catskill Mountains for water purification."
+    },
+    {
+      "type": "short-answer",
+      "question": "What are three types of relational values?",
+      "answer": "Personal/Cultural Identity (sacred sites, hobbies), Social Responsibility (stewardship), History & Education (biological library), Biophilia (connection to life), Aesthetic (beauty appreciation)",
+      "keyPoints": ["identity", "responsibility", "education", "biophilia", "aesthetic"]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which type of value includes ecosystem functions like pollination and water purification?",
+      "options": ["Intrinsic value", "Direct use value", "Indirect use value", "Relational value"],
+      "answer": "Indirect use value",
+      "explanation": "Indirect use values are instrumental values from ecosystem functions, not tangible products."
+    },
+    {
+      "type": "true-false",
+      "question": "Supporting services like nutrient cycling directly benefit humans.",
+      "answer": false,
+      "explanation": "False. Supporting services underpin all other services but don't directly benefit humans—they support the ecosystem."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "The innate human connection to life and living systems is called _____.",
+      "answer": "biophilia",
+      "acceptableAnswers": ["biophilia"],
+      "explanation": "Biophilia is the hypothesis that humans have an innate tendency to seek connections with nature and life."
+    }
+  ],
+  "ch6-extinctions": [
+    {
+      "type": "multiple-choice",
+      "question": "What is the current extinction rate in E/MSY?",
+      "options": ["0.5 E/MSY", "1.0 E/MSY", "2.28 E/MSY", "5.0 E/MSY"],
+      "answer": "2.28 E/MSY",
+      "explanation": "The current rate is 2.28 E/MSY, compared to a background rate of 0.1-1 E/MSY."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "The IUCN Red List categories CR, EN, and VU collectively refer to _____ species.",
+      "answer": "threatened",
+      "acceptableAnswers": ["threatened"],
+      "explanation": "Critically Endangered, Endangered, and Vulnerable species are collectively called 'threatened species.'"
+    },
+    {
+      "type": "short-answer",
+      "question": "What are the four main proximate drivers of extinction according to the Living Planet Index?",
+      "answer": "Habitat loss and degradation (primary), Overexploitation, Invasive species and disease (especially for amphibians/reptiles), Climate change",
+      "keyPoints": ["habitat loss", "overexploitation", "invasive", "climate"]
+    },
+    {
+      "type": "true-false",
+      "question": "More than 5% of described species have gone extinct.",
+      "answer": false,
+      "explanation": "False. Less than 0.05% of described species are documented as extinct (986 species), but the rate is unusually high."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the species-area relationship formula?",
+      "options": ["S = C + A", "S = C × A^z", "S = C / A", "S = A - C"],
+      "answer": "S = C × A^z",
+      "explanation": "S = C·A^z where S is species richness, A is area, C is a constant, and z is the scaling factor."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "Since 1970, the Living Planet Index shows an average population decline of _____% across 32,000 populations.",
+      "answer": "69",
+      "acceptableAnswers": ["69", "69%"],
+      "explanation": "The LPI tracks 32,000 populations of 5,230 species showing a 69% average decline since 1970."
+    },
+    {
+      "type": "short-answer",
+      "question": "What are three demographic parameters that control extinction risk?",
+      "answer": "Population size (small populations = higher risk), Density (affects reproduction, feeding, defense), Fecundity & Mortality (reproductive potential vs. death rate)",
+      "keyPoints": ["population size", "density", "fecundity", "mortality"]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which monitoring technology connects sensors and data globally?",
+      "options": ["Satellite remote sensing", "Citizen science", "Observation networks (NEON, GEOSS)", "Time-series monitoring"],
+      "answer": "Observation networks (NEON, GEOSS)",
+      "explanation": "NEON and GEOSS are observation networks that connect sensors and data on a global scale."
+    },
+    {
+      "type": "true-false",
+      "question": "The species-area relationship accounts for extinction debt and has no built-in assumptions.",
+      "answer": false,
+      "explanation": "False. The species-area relationship has limitations—it doesn't account for extinction debt and has built-in assumptions."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "Random birth and death events causing population fluctuations is called demographic _____.",
+      "answer": "stochasticity",
+      "acceptableAnswers": ["stochasticity", "stochastic processes"],
+      "explanation": "Demographic stochasticity refers to random events affecting small population birth and death rates."
+    }
+  ],
+  "ch9-habitat-loss": [
+    {
+      "type": "multiple-choice",
+      "question": "What is the primary driver of habitat loss globally?",
+      "options": ["Urbanization", "Agriculture", "Mining", "Climate change"],
+      "answer": "Agriculture",
+      "explanation": "Agriculture occupies ~46% of Earth's habitable land and is projected to expand 10-20% by 2050."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "By 2050, approximately _____% of people will live in cities.",
+      "answer": "70",
+      "acceptableAnswers": ["70", "70%"],
+      "explanation": "Rapid urbanization, especially in Asia and Africa, will result in ~70% of people living in cities by 2050."
+    },
+    {
+      "type": "short-answer",
+      "question": "Describe the typical land-use transition sequence as societies develop.",
+      "answer": "Natural ecosystems → frontier clearings → subsistence farms → intensive agriculture → urban development → protected/recreational lands",
+      "keyPoints": ["natural", "frontier", "subsistence", "urban", "protected"]
+    },
+    {
+      "type": "true-false",
+      "question": "Grasslands have experienced the highest percentage of habitat loss among terrestrial biomes.",
+      "answer": true,
+      "explanation": "True. Grasslands have the highest loss due to conversion to agriculture."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What percentage of global wetlands have been lost?",
+      "options": ["25%", "38%", "53.5%", "71%"],
+      "answer": "53.5%",
+      "explanation": "Approximately 53.5% of wetlands have been lost globally."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "Coral reefs make up less than 1% of the ocean floor but are home to _____% of marine species.",
+      "answer": "25",
+      "acceptableAnswers": ["25", "25%"],
+      "explanation": "Coral reefs occupy <1% of ocean floor but support 25% of marine species; 90% are threatened by 2030."
+    },
+    {
+      "type": "short-answer",
+      "question": "What is the SLOSS debate in conservation biology?",
+      "answer": "SLOSS stands for 'Single Large Or Several Small' reserves—a debate about whether one large protected area or several small areas better conserve biodiversity",
+      "keyPoints": ["Single Large", "Several Small", "reserves", "debate"]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the metapopulation model formula?",
+      "options": ["df/dt = pi - pe", "df/dt = pi(1-f) - pe·f", "df/dt = pe(1-f) - pi·f", "df/dt = f(pi - pe)"],
+      "answer": "df/dt = pi(1-f) - pe·f",
+      "explanation": "The metapopulation model: df/dt = pi(1-f) - pe·f, where f is proportion occupied, pi is immigration, pe is extinction."
+    },
+    {
+      "type": "true-false",
+      "question": "Edge effects in fragmented habitats favor specialist species over generalists.",
+      "answer": false,
+      "explanation": "False. Edge effects favor generalist and invasive species while harming specialists that need core habitat."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "Current soil erosion rates are _____× faster than historical rates due to deforestation and poor farming practices.",
+      "answer": "11-38",
+      "acceptableAnswers": ["11-38", "11 to 38", "11-38×"],
+      "explanation": "Deforestation, overgrazing, and unsustainable farming cause soil erosion 11-38× faster than historical rates."
+    }
+  ],
+  "ch10-overexploitation": [
+    {
+      "type": "multiple-choice",
+      "question": "At what population size does Maximum Sustainable Yield (MSY) occur?",
+      "options": ["N = K/4", "N = K/2", "N = K", "N = 2K"],
+      "answer": "N = K/2",
+      "explanation": "MSY occurs at N = K/2 (half the carrying capacity) where population growth rate is highest."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "The MSY growth rate formula is _____.",
+      "answer": "rK/4",
+      "acceptableAnswers": ["rK/4", "r*K/4"],
+      "explanation": "At MSY (N = K/2), the growth rate equals rK/4."
+    },
+    {
+      "type": "short-answer",
+      "question": "What are the three types of overexploitation?",
+      "answer": "Commercial (driven by legal/illegal markets and profit), Subsistence (hunting for food, medicine, cultural practices), Recreational (sport hunting/fishing)",
+      "keyPoints": ["commercial", "subsistence", "recreational"]
+    },
+    {
+      "type": "true-false",
+      "question": "The fixed-effort model is less stable than the fixed-quota model for sustainable harvesting.",
+      "answer": false,
+      "explanation": "False. The fixed-effort model is MORE stable—it only fails when exploitation rate (EN) exceeds growth rate (r)."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What percentage of fish stocks are currently overfished?",
+      "options": ["15%", "25.4%", "35.4%", "57.3%"],
+      "answer": "35.4%",
+      "explanation": "35.4% of fish stocks are overfished, while 57.3% are at maximum sustainable rate."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "Bycatch in fishing operations ranges from _____% of the catch being discarded.",
+      "answer": "25-75",
+      "acceptableAnswers": ["25-75", "25 to 75", "25-75%"],
+      "explanation": "Bycatch (unwanted catch) represents 25-75% of total catch, most of which dies."
+    },
+    {
+      "type": "short-answer",
+      "question": "What are the two social dilemmas that explain why rational individuals overharvest?",
+      "answer": "Prisoner's dilemma (lack of cooperation due to uncertainty about others' actions) and Assurance dilemma (mistrust between individuals or with governments leads to risk aversion)",
+      "keyPoints": ["prisoner's dilemma", "assurance dilemma", "cooperation", "mistrust"]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the estimated value of illegal environmental crime per year?",
+      "options": ["$10-25 billion", "$50-75 billion", "$91-258 billion", "$400-500 billion"],
+      "answer": "$91-258 billion",
+      "explanation": "Illegal environmental crime is estimated at $91-258 billion/year, while legal wildlife trade is $2.9-4.4 trillion (1997-2016)."
+    },
+    {
+      "type": "true-false",
+      "question": "61% of human pathogens originate from animals (zoonotic diseases).",
+      "answer": true,
+      "explanation": "True. Zoonotic diseases account for 61% of human pathogens, with risk hotspots having high wildlife contact and global transport hubs."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "The global fishing industry is worth approximately $_____B, split between wild-capture and aquaculture.",
+      "answer": "406",
+      "acceptableAnswers": ["406", "406B", "$406B"],
+      "explanation": "The fishing industry is worth $406 billion (51% wild-capture, 49% aquaculture)."
+    }
