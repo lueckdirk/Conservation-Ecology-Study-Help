@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spaced Repetition Study App</title>
+    <title>Natural Resources Study App</title>
     <style>
         * {
             margin: 0;
@@ -32,6 +32,43 @@
         .header h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+
+        .nav-tab {
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .nav-tab:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .nav-tab.active {
+            background: white;
+            color: #667eea;
+            border-color: white;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
         }
 
         .stats {
@@ -358,12 +395,208 @@
             border-radius: 8px;
             margin-bottom: 20px;
         }
+
+        /* Quiz Page Styles */
+        .quiz-container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .quiz-header {
+            background: #10b981;
+            color: white;
+            padding: 20px;
+            border-radius: 8px 8px 0 0;
+            margin: -30px -30px 20px -30px;
+        }
+
+        .quiz-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .quiz-header p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .quiz-progress {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .quiz-progress-bar {
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+
+        .quiz-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #10b981, #059669);
+            transition: width 0.3s;
+        }
+
+        .quiz-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .quiz-option {
+            padding: 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            background: white;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .quiz-option:hover {
+            border-color: #10b981;
+            background: #f0fdf4;
+        }
+
+        .quiz-results {
+            margin-top: 20px;
+        }
+
+        .quiz-result-header {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #10b981;
+            margin-bottom: 15px;
+        }
+
+        .quiz-result-description {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .quiz-result-approach {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .quiz-scores {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .quiz-scores h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .score-item {
+            margin-bottom: 15px;
+        }
+
+        .score-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+        }
+
+        .score-name {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .score-points {
+            color: #666;
+        }
+
+        .score-bar {
+            width: 100%;
+            height: 10px;
+            background: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .score-bar-fill {
+            height: 100%;
+            background: #10b981;
+            border-radius: 5px;
+            transition: width 0.5s ease;
+        }
+
+        .quiz-note {
+            background: #dbeafe;
+            border-left: 4px solid #3b82f6;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .quiz-note strong {
+            color: #1e40af;
+        }
+
+        .quiz-note p {
+            margin-top: 8px;
+            color: #1e3a8a;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .quiz-restart-btn {
+            width: 100%;
+            padding: 15px;
+            background: #10b981;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .quiz-restart-btn:hover {
+            background: #059669;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>📚 Spaced Repetition Study</h1>
+            <h1>📚 Natural Resources Study App</h1>
+            <div class="nav-tabs">
+                <button class="nav-tab active" onclick="switchPage('study')">Study Cards</button>
+                <button class="nav-tab" onclick="switchPage('quiz')">Philosophy Quiz</button>
+            </div>
+        </div>
+
+        <!-- Study Page -->
+        <div id="studyPage" class="page active">
             <div class="stats">
                 <div class="stat-box">
                     <strong id="dueCount">0</strong>
@@ -378,75 +611,345 @@
                     <span>Reviewed</span>
                 </div>
             </div>
+
+            <div class="card">
+                <div class="filter-section">
+                    <label for="datasetSelect">Select Question Set:</label>
+                    <select id="datasetSelect">
+                        <option value="">Loading...</option>
+                    </select>
+
+                    <label style="margin-top: 15px;">Select Topics:</label>
+                    <div id="topicCheckboxes" class="checkbox-group">
+                        <div class="loading">Loading topics...</div>
+                    </div>
+                    <button id="selectAllBtn" class="select-all-btn">Select All Topics</button>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                </div>
+
+                <div class="no-cards" id="noCards">
+                    <h2>🎉 All done for now!</h2>
+                    <p>Check back later or select different topics.</p>
+                </div>
+
+                <div class="question-container" id="questionContainer">
+                    <div class="card-info">
+                        <span id="cardType">New Card</span>
+                        <span id="cardNumber">Card 1 of 10</span>
+                    </div>
+
+                    <div class="question-type-badge" id="questionTypeBadge">Multiple Choice</div>
+
+                    <div class="question" id="question">
+                        Loading question...
+                    </div>
+
+                    <div class="options" id="options"></div>
+
+                    <button class="show-answer-btn" id="showAnswerBtn">Show Answer</button>
+
+                    <div class="answer" id="answer">
+                        <div class="answer-label">Answer:</div>
+                        <div id="answerText"></div>
+                    </div>
+
+                    <div class="difficulty-buttons" id="difficultyButtons">
+                        <button class="diff-btn diff-again" data-difficulty="again">
+                            <span>Again</span>
+                            <span class="interval">&lt;10m</span>
+                        </button>
+                        <button class="diff-btn diff-hard" data-difficulty="hard">
+                            <span>Hard</span>
+                            <span class="interval" id="hardInterval">1d</span>
+                        </button>
+                        <button class="diff-btn diff-good" data-difficulty="good">
+                            <span>Good</span>
+                            <span class="interval" id="goodInterval">3d</span>
+                        </button>
+                        <button class="diff-btn diff-easy" data-difficulty="easy">
+                            <span>Easy</span>
+                            <span class="interval" id="easyInterval">7d</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="card">
-            <div class="filter-section">
-                <label for="datasetSelect">Select Question Set:</label>
-                <select id="datasetSelect">
-                    <option value="">Loading...</option>
-                </select>
+        <!-- Quiz Page -->
+        <div id="quizPage" class="page">
+            <div class="quiz-container">
+                <div id="quizContent">
+                    <div class="quiz-header">
+                        <h2>Discover Your Conservation Philosophy</h2>
+                        <p>Explore perspectives from John Muir, Gifford Pinchot, Aldo Leopold, and Rachel Carson</p>
+                    </div>
 
-                <label style="margin-top: 15px;">Select Topics:</label>
-                <div id="topicCheckboxes" class="checkbox-group">
-                    <div class="loading">Loading topics...</div>
-                </div>
-                <button id="selectAllBtn" class="select-all-btn">Select All Topics</button>
-            </div>
+                    <div id="quizQuestions">
+                        <div class="quiz-progress">
+                            <span>Question <span id="quizCurrentQ">1</span> of <span id="quizTotalQ">10</span></span>
+                            <span id="quizPercent">10% complete</span>
+                        </div>
+                        <div class="quiz-progress-bar">
+                            <div class="quiz-progress-fill" id="quizProgressFill" style="width: 10%"></div>
+                        </div>
 
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressFill" style="width: 0%"></div>
-            </div>
+                        <div class="quiz-question" id="quizQuestion">Loading question...</div>
+                        <div class="quiz-options" id="quizOptions"></div>
+                    </div>
 
-            <div class="no-cards" id="noCards">
-                <h2>🎉 All done for now!</h2>
-                <p>Check back later or select different topics.</p>
-            </div>
-
-            <div class="question-container" id="questionContainer">
-                <div class="card-info">
-                    <span id="cardType">New Card</span>
-                    <span id="cardNumber">Card 1 of 10</span>
-                </div>
-
-                <div class="question-type-badge" id="questionTypeBadge">Multiple Choice</div>
-
-                <div class="question" id="question">
-                    Loading question...
-                </div>
-
-                <div class="options" id="options"></div>
-
-                <button class="show-answer-btn" id="showAnswerBtn">Show Answer</button>
-
-                <div class="answer" id="answer">
-                    <div class="answer-label">Answer:</div>
-                    <div id="answerText"></div>
-                </div>
-
-                <div class="difficulty-buttons" id="difficultyButtons">
-                    <button class="diff-btn diff-again" data-difficulty="again">
-                        <span>Again</span>
-                        <span class="interval">&lt;10m</span>
-                    </button>
-                    <button class="diff-btn diff-hard" data-difficulty="hard">
-                        <span>Hard</span>
-                        <span class="interval" id="hardInterval">1d</span>
-                    </button>
-                    <button class="diff-btn diff-good" data-difficulty="good">
-                        <span>Good</span>
-                        <span class="interval" id="goodInterval">3d</span>
-                    </button>
-                    <button class="diff-btn diff-easy" data-difficulty="easy">
-                        <span>Easy</span>
-                        <span class="interval" id="easyInterval">7d</span>
-                    </button>
+                    <div id="quizResults" style="display: none;">
+                        <!-- Results will be inserted here -->
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
+        // Page switching
+        function switchPage(page) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+            
+            if (page === 'study') {
+                document.getElementById('studyPage').classList.add('active');
+                document.querySelectorAll('.nav-tab')[0].classList.add('active');
+            } else if (page === 'quiz') {
+                document.getElementById('quizPage').classList.add('active');
+                document.querySelectorAll('.nav-tab')[1].classList.add('active');
+            }
+        }
+
+        // Quiz functionality
+        const quizQuestions = [
+            {
+                id: 1,
+                question: "What is the primary value of wilderness areas?",
+                options: [
+                    { text: "Their spiritual and aesthetic value - places for human renewal and connection with nature", value: "muir", points: 3 },
+                    { text: "Their resources should be used wisely for the greatest good for the greatest number", value: "pinchot", points: 3 },
+                    { text: "They are integral parts of a land community that deserves ethical consideration", value: "leopold", points: 3 },
+                    { text: "They provide essential ecosystem services that sustain all life", value: "carson", points: 3 }
+                ]
+            },
+            {
+                id: 2,
+                question: "A forest is threatened by development. What approach do you favor?",
+                options: [
+                    { text: "Preserve it completely - some places are too sacred to alter", value: "muir", points: 3 },
+                    { text: "Allow sustainable timber harvest to benefit people while maintaining forest health", value: "pinchot", points: 3 },
+                    { text: "Consider the entire community - trees, soil, water, animals - and what maintains its integrity", value: "leopold", points: 3 },
+                    { text: "Study the ecological impacts thoroughly before any decision", value: "carson", points: 3 }
+                ]
+            },
+            {
+                id: 3,
+                question: "How do you view humanity's relationship with nature?",
+                options: [
+                    { text: "Humans are separate from nature and need wild places to find meaning", value: "muir", points: 3 },
+                    { text: "Humans are wise managers and stewards of natural resources", value: "pinchot", points: 3 },
+                    { text: "Humans are plain members and citizens of the land community, not conquerors", value: "leopold", points: 3 },
+                    { text: "Humans are part of an interconnected web where our actions ripple through ecosystems", value: "carson", points: 3 }
+                ]
+            },
+            {
+                id: 4,
+                question: "What concerns you most about environmental issues?",
+                options: [
+                    { text: "Loss of wild, beautiful places where people can experience wonder", value: "muir", points: 3 },
+                    { text: "Wasteful use of resources and lack of long-term planning", value: "pinchot", points: 3 },
+                    { text: "Disruption of ecological relationships and loss of biodiversity", value: "leopold", points: 3 },
+                    { text: "Hidden harms from chemicals and technologies we don't fully understand", value: "carson", points: 3 }
+                ]
+            },
+            {
+                id: 5,
+                question: "A species has no obvious use to humans. Should we protect it?",
+                options: [
+                    { text: "Yes, every creature has intrinsic value and right to exist", value: "muir", points: 3 },
+                    { text: "If protecting it doesn't conflict with human needs and wise resource use", value: "pinchot", points: 2 },
+                    { text: "Yes, because every species plays a role in the ecological community's health", value: "leopold", points: 3 },
+                    { text: "Yes, we don't yet understand all the ecological connections we might disrupt", value: "carson", points: 3 }
+                ]
+            },
+            {
+                id: 6,
+                question: "What role should science play in conservation?",
+                options: [
+                    { text: "Science is valuable, but direct experience and reverence for nature matter more", value: "muir", points: 3 },
+                    { text: "Scientific forestry and management are essential for efficient resource use", value: "pinchot", points: 3 },
+                    { text: "Ecological science helps us understand the land as an interconnected whole", value: "leopold", points: 3 },
+                    { text: "Rigorous science is crucial for revealing hidden environmental dangers", value: "carson", points: 3 }
+                ]
+            },
+            {
+                id: 7,
+                question: "How should we balance economic development with conservation?",
+                options: [
+                    { text: "Some places are priceless and should never be compromised for economics", value: "muir", points: 3 },
+                    { text: "Conservation IS good economics - wise use ensures resources for future generations", value: "pinchot", points: 3 },
+                    { text: "We need to think like a mountain - consider long-term ecological health, not just short-term gain", value: "leopold", points: 3 },
+                    { text: "We must question whether 'progress' that damages ecosystems is really progress at all", value: "carson", points: 3 }
+                ]
+            },
+            {
+                id: 8,
+                question: "What's the best way to inspire conservation in others?",
+                options: [
+                    { text: "Get them into wild places to experience nature's beauty and majesty", value: "muir", points: 3 },
+                    { text: "Show them the practical benefits of sustainable resource management", value: "pinchot", points: 3 },
+                    { text: "Help them understand their ethical relationship with the land community", value: "leopold", points: 3 },
+                    { text: "Educate them about the interconnected consequences of environmental harm", value: "carson", points: 3 }
+                ]
+            },
+            {
+                id: 9,
+                question: "A new pesticide increases crop yields. How do you evaluate it?",
+                options: [
+                    { text: "Worry about contaminating pristine wild areas nearby", value: "muir", points: 2 },
+                    { text: "Support it if it helps feed more people efficiently", value: "pinchot", points: 3 },
+                    { text: "Consider its effects on all members of the agricultural ecosystem", value: "leopold", points: 3 },
+                    { text: "Demand extensive testing for long-term ecological and health impacts", value: "carson", points: 3 }
+                ]
+            },
+            {
+                id: 10,
+                question: "What does 'conservation' fundamentally mean to you?",
+                options: [
+                    { text: "Protecting wild nature from human interference", value: "muir", points: 3 },
+                    { text: "Using natural resources wisely and efficiently for human benefit", value: "pinchot", points: 3 },
+                    { text: "Preserving the integrity, stability, and beauty of the biotic community", value: "leopold", points: 3 },
+                    { text: "Protecting the web of life from harmful human interventions", value: "carson", points: 3 }
+                ]
+            }
+        ];
+
+        let currentQuizQuestion = 0;
+        let quizAnswers = {};
+
+        function startQuiz() {
+            currentQuizQuestion = 0;
+            quizAnswers = {};
+            document.getElementById('quizQuestions').style.display = 'block';
+            document.getElementById('quizResults').style.display = 'none';
+            showQuizQuestion();
+        }
+
+        function showQuizQuestion() {
+            if (currentQuizQuestion >= quizQuestions.length) {
+                showQuizResults();
+                return;
+            }
+
+            const question = quizQuestions[currentQuizQuestion];
+            const progress = ((currentQuizQuestion + 1) / quizQuestions.length) * 100;
+
+            document.getElementById('quizCurrentQ').textContent = currentQuizQuestion + 1;
+            document.getElementById('quizTotalQ').textContent = quizQuestions.length;
+            document.getElementById('quizPercent').textContent = Math.round(progress) + '% complete';
+            document.getElementById('quizProgressFill').style.width = progress + '%';
+            document.getElementById('quizQuestion').textContent = question.question;
+
+            const optionsContainer = document.getElementById('quizOptions');
+            optionsContainer.innerHTML = '';
+
+            question.options.forEach((option, index) => {
+                const button = document.createElement('button');
+                button.className = 'quiz-option';
+                button.textContent = option.text;
+                button.onclick = () => selectQuizOption(option.value, option.points);
+                optionsContainer.appendChild(button);
+            });
+        }
+
+        function selectQuizOption(value, points) {
+            if (!quizAnswers[value]) {
+                quizAnswers[value] = 0;
+            }
+            quizAnswers[value] += points;
+            currentQuizQuestion++;
+            showQuizQuestion();
+        }
+
+        function showQuizResults() {
+            const profiles = {
+                muir: {
+                    name: "Preservationist (John Muir)",
+                    description: "You align with John Muir's preservationist philosophy. You believe wilderness has intrinsic value beyond human use - it's sacred, spiritually renewing, and essential for the human soul. You advocate for protecting wild places in their natural state, viewing nature as a temple where people can find meaning, beauty, and connection to something greater. You're motivated by wonder and believe some places should remain untouched.",
+                    approach: "Spiritual and aesthetic preservation"
+                },
+                pinchot: {
+                    name: "Conservationist (Gifford Pinchot)",
+                    description: "You align with Gifford Pinchot's utilitarian conservation philosophy. You believe natural resources should be managed wisely for 'the greatest good for the greatest number for the longest time.' You favor scientific management, sustainable use, and efficient allocation of resources to benefit both current and future generations. You see conservation as smart economics and responsible stewardship, balancing human needs with resource sustainability.",
+                    approach: "Wise use and sustainable management"
+                },
+                leopold: {
+                    name: "Land Ethic (Aldo Leopold)",
+                    description: "You align with Aldo Leopold's land ethic philosophy. You see humans as members of a broader ecological community, not its masters. Your approach considers the health of entire ecosystems - soil, water, plants, animals, and humans together. You believe something is right when it preserves the integrity, stability, and beauty of the biotic community. You 'think like a mountain,' considering long-term ecological consequences and relationships.",
+                    approach: "Ecological community ethics"
+                },
+                carson: {
+                    name: "Ecological Awareness (Rachel Carson)",
+                    description: "You align with Rachel Carson's philosophy of ecological interconnection and precaution. You recognize that everything in nature is connected, and human interventions can have far-reaching, unintended consequences. You advocate for rigorous science, careful study of long-term impacts, and questioning technologies that promise progress but may cause hidden harm. You believe in protecting the web of life and maintaining ecological balance.",
+                    approach: "Precautionary and interconnected thinking"
+                }
+            };
+
+            const sortedResults = Object.entries(quizAnswers).sort((a, b) => b[1] - a[1]);
+            const topResult = sortedResults[0] ? sortedResults[0][0] : 'leopold';
+            const result = profiles[topResult];
+
+            const names = {
+                muir: "Muir (Preservationist)",
+                pinchot: "Pinchot (Conservationist)",
+                leopold: "Leopold (Land Ethic)",
+                carson: "Carson (Ecological Awareness)"
+            };
+
+            let scoresHtml = '';
+            const maxScore = sortedResults[0][1];
+            sortedResults.forEach(([key, value]) => {
+                const percentage = (value / maxScore) * 100;
+                scoresHtml += `
+                    <div class="score-item">
+                        <div class="score-label">
+                            <span class="score-name">${names[key]}</span>
+                            <span class="score-points">${value} points</span>
+                        </div>
+                        <div class="score-bar">
+                            <div class="score-bar-fill" style="width: ${percentage}%"></div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            document.getElementById('quizQuestions').style.display = 'none';
+            document.getElementById('quizResults').style.display = 'block';
+            document.getElementById('quizResults').innerHTML = `
+                <h2 class="quiz-result-header">${result.name}</h2>
+                <p class="quiz-result-description">${result.description}</p>
+                <p class="quiz-result-approach"><strong>Your Approach:</strong> ${result.approach}</p>
+
+                <div class="quiz-scores">
+                    <h3>Your Score Distribution:</h3>
+                    ${scoresHtml}
+                </div>
+
+                <div class="quiz-note">
+                    <strong>Remember:</strong>
+                    <p>Most people blend multiple philosophies! These pioneers themselves influenced each other and evolved their thinking. Your results show which perspectives resonate most with you, but effective conservation often requires integrating multiple viewpoints.</p>
+                </div>
+
+                <button class="quiz-restart-btn" onclick="startQuiz()">Take Quiz Again</button>
+            `;
+        }
+
+        // Initialize quiz on load
+        startQuiz();
+
         // Configuration - Add your JSON files here
         const QUESTION_FILES = [
             { id: 'conservation-biology', name: 'Conservation Biology', path: 'data/conservation-biology.json' },
