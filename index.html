@@ -824,6 +824,56 @@
                     { text: "Preserving the integrity, stability, and beauty of the biotic community", value: "leopold", points: 3 },
                     { text: "Protecting the web of life from harmful human interventions", value: "carson", points: 3 }
                 ]
+            },
+            {
+                id: 11,
+                question: "How important is social justice in environmental work?",
+                options: [
+                    { text: "Nature conservation should focus primarily on protecting wilderness, not social issues", value: "muir", points: 2 },
+                    { text: "Resources should be distributed fairly, but efficiency and productivity come first", value: "pinchot", points: 2 },
+                    { text: "All communities, human and non-human, deserve consideration in environmental decisions", value: "leopold", points: 2, secondary: "environmental-justice" },
+                    { text: "Environmental harm disproportionately affects marginalized communities - this must be addressed", value: "environmental-justice", points: 3 }
+                ]
+            },
+            {
+                id: 12,
+                question: "What role should Indigenous knowledge play in conservation?",
+                options: [
+                    { text: "Wilderness should be preserved in its 'natural' state without human influence", value: "muir", points: 2 },
+                    { text: "All evidence-based management practices, regardless of origin, should be considered", value: "pinchot", points: 2 },
+                    { text: "Indigenous peoples have co-evolved with their landscapes and hold valuable ecological wisdom", value: "traditional-ecological", points: 3 },
+                    { text: "We should study Indigenous practices scientifically to understand their ecological impacts", value: "carson", points: 2, secondary: "traditional-ecological" }
+                ]
+            },
+            {
+                id: 13,
+                question: "How should we address climate change?",
+                options: [
+                    { text: "Protect wilderness areas as refuges and carbon sinks", value: "muir", points: 2, secondary: "deep-ecology" },
+                    { text: "Develop efficient renewable energy and sustainable resource management systems", value: "pinchot", points: 2, secondary: "sustainable-development" },
+                    { text: "Recognize that climate disrupts entire ecological communities and address root causes", value: "leopold", points: 2, secondary: "systems-thinking" },
+                    { text: "Reduce consumption, embrace degrowth, and fundamentally change our relationship with nature", value: "deep-ecology", points: 3 }
+                ]
+            },
+            {
+                id: 14,
+                question: "What's your view on technology's role in conservation?",
+                options: [
+                    { text: "Technology distances us from nature - we need more direct connection, not more tech", value: "muir", points: 2, secondary: "deep-ecology" },
+                    { text: "Technology enables efficient resource use and monitoring - embrace innovation", value: "pinchot", points: 2, secondary: "sustainable-development" },
+                    { text: "Technology is a tool - use it thoughtfully to understand and protect ecological systems", value: "leopold", points: 2, secondary: "systems-thinking" },
+                    { text: "Proceed cautiously - new technologies often have unforeseen ecological consequences", value: "carson", points: 3 }
+                ]
+            },
+            {
+                id: 15,
+                question: "Who should have a voice in environmental decisions?",
+                options: [
+                    { text: "Those who deeply appreciate and understand wilderness should advocate for it", value: "muir", points: 2 },
+                    { text: "Trained professionals and resource managers should make science-based decisions", value: "pinchot", points: 2 },
+                    { text: "All stakeholders in the land community, including future generations and non-humans", value: "leopold", points: 2, secondary: "systems-thinking" },
+                    { text: "Especially those most affected by environmental harm, including marginalized communities", value: "environmental-justice", points: 3 }
+                ]
             }
         ];
 
@@ -870,6 +920,17 @@
                 quizAnswers[value] = 0;
             }
             quizAnswers[value] += points;
+            
+            // Also track secondary philosophy if present
+            const question = quizQuestions[currentQuizQuestion];
+            const selectedOption = question.options.find(opt => opt.value === value);
+            if (selectedOption && selectedOption.secondary) {
+                if (!quizAnswers[selectedOption.secondary]) {
+                    quizAnswers[selectedOption.secondary] = 0;
+                }
+                quizAnswers[selectedOption.secondary] += 1;
+            }
+            
             currentQuizQuestion++;
             showQuizQuestion();
         }
@@ -879,19 +940,178 @@
                 muir: {
                     name: "Preservationist (John Muir)",
                     description: "You align with John Muir's preservationist philosophy. You believe wilderness has intrinsic value beyond human use - it's sacred, spiritually renewing, and essential for the human soul. You advocate for protecting wild places in their natural state, viewing nature as a temple where people can find meaning, beauty, and connection to something greater. You're motivated by wonder and believe some places should remain untouched.",
-                    approach: "Spiritual and aesthetic preservation"
+                    approach: "Spiritual and aesthetic preservation",
+                    isFounder: true
                 },
                 pinchot: {
                     name: "Conservationist (Gifford Pinchot)",
                     description: "You align with Gifford Pinchot's utilitarian conservation philosophy. You believe natural resources should be managed wisely for 'the greatest good for the greatest number for the longest time.' You favor scientific management, sustainable use, and efficient allocation of resources to benefit both current and future generations. You see conservation as smart economics and responsible stewardship, balancing human needs with resource sustainability.",
-                    approach: "Wise use and sustainable management"
+                    approach: "Wise use and sustainable management",
+                    isFounder: true
                 },
                 leopold: {
                     name: "Land Ethic (Aldo Leopold)",
                     description: "You align with Aldo Leopold's land ethic philosophy. You see humans as members of a broader ecological community, not its masters. Your approach considers the health of entire ecosystems - soil, water, plants, animals, and humans together. You believe something is right when it preserves the integrity, stability, and beauty of the biotic community. You 'think like a mountain,' considering long-term ecological consequences and relationships.",
-                    approach: "Ecological community ethics"
+                    approach: "Ecological community ethics",
+                    isFounder: true
                 },
                 carson: {
+                    name: "Ecological Awareness (Rachel Carson)",
+                    description: "You align with Rachel Carson's philosophy of ecological interconnection and precaution. You recognize that everything in nature is connected, and human interventions can have far-reaching, unintended consequences. You advocate for rigorous science, careful study of long-term impacts, and questioning technologies that promise progress but may cause hidden harm. You believe in protecting the web of life and maintaining ecological balance.",
+                    approach: "Precautionary and interconnected thinking",
+                    isFounder: true
+                },
+                "environmental-justice": {
+                    name: "Environmental Justice Advocate",
+                    description: "Your philosophy emphasizes that environmental protection must address social equity. You recognize that marginalized communities disproportionately bear the burden of environmental harm - from pollution to climate change impacts. You believe conservation cannot be separated from human rights, and that those most affected by environmental decisions should have the strongest voice in making them. Your approach integrates social justice with ecological health, understanding that true sustainability must be equitable.",
+                    approach: "Equity-centered environmentalism",
+                    isFounder: false
+                },
+                "traditional-ecological": {
+                    name: "Traditional Ecological Knowledge Proponent",
+                    description: "You value the deep wisdom of Indigenous peoples and local communities who have lived sustainably with their landscapes for generations. You recognize that traditional ecological knowledge offers insights Western science is only beginning to understand. Your philosophy honors the relationship-based approach many Indigenous cultures have with nature, seeing humans not as managers but as relatives of the natural world. You advocate for decolonizing conservation and centering Indigenous voices and sovereignty.",
+                    approach: "Indigenous wisdom and reciprocity",
+                    isFounder: false
+                },
+                "deep-ecology": {
+                    name: "Deep Ecology & Degrowth Thinker",
+                    description: "Your philosophy questions the fundamental assumptions of industrial society. You believe the environmental crisis stems from our anthropocentric worldview and endless growth paradigm. You advocate for deep changes - recognizing the intrinsic value of all life, dramatically reducing human consumption, and fundamentally reimagining our economic systems. You see wilderness not as a resource or even just a community member, but as having value independent of any human perspective. You embrace degrowth, simplicity, and biocentric equality.",
+                    approach: "Radical transformation and biocentric values",
+                    isFounder: false
+                },
+                "sustainable-development": {
+                    name: "Sustainable Development Advocate",
+                    description: "You seek to integrate environmental protection with economic development and social progress. You believe we can meet present needs without compromising future generations through innovation, efficiency, and smart planning. You favor market-based solutions, green technology, and international cooperation. Your approach is optimistic about human ingenuity and sees environmental challenges as opportunities for sustainable innovation. You work within existing systems to make them more sustainable.",
+                    approach: "Integrated innovation and green growth",
+                    isFounder: false
+                },
+                "systems-thinking": {
+                    name: "Systems Thinker & Complexity Scientist",
+                    description: "You view environmental issues through the lens of complex adaptive systems. You recognize that ecosystems, economies, and societies are interconnected in non-linear ways with feedback loops and emergent properties. You're cautious about simple solutions, understanding that interventions can have unexpected consequences. You favor adaptive management, resilience thinking, and holistic approaches that account for uncertainty. You integrate multiple disciplines and perspectives to understand the whole system.",
+                    approach: "Holistic complexity and adaptive management",
+                    isFounder: false
+                }
+            };
+
+            // Separate founder scores from contemporary philosophies
+            const founderScores = {};
+            const contemporaryScores = {};
+            
+            Object.entries(quizAnswers).forEach(([key, value]) => {
+                if (profiles[key].isFounder) {
+                    founderScores[key] = value;
+                } else {
+                    contemporaryScores[key] = value;
+                }
+            });
+
+            const sortedFounders = Object.entries(founderScores).sort((a, b) => b[1] - a[1]);
+            const sortedContemporary = Object.entries(contemporaryScores).sort((a, b) => b[1] - a[1]);
+            
+            const topFounder = sortedFounders[0] ? sortedFounders[0][0] : 'leopold';
+            const secondFounder = sortedFounders[1] ? sortedFounders[1][0] : null;
+            
+            // Determine if user has strong contemporary leanings
+            const topContemporary = sortedContemporary[0];
+            const hasStrongContemporary = topContemporary && topContemporary[1] >= 3;
+
+            const names = {
+                muir: "Muir (Preservationist)",
+                pinchot: "Pinchot (Conservationist)",
+                leopold: "Leopold (Land Ethic)",
+                carson: "Carson (Ecological Awareness)",
+                "environmental-justice": "Environmental Justice",
+                "traditional-ecological": "Traditional Ecological Knowledge",
+                "deep-ecology": "Deep Ecology & Degrowth",
+                "sustainable-development": "Sustainable Development",
+                "systems-thinking": "Systems Thinking"
+            };
+
+            let resultHtml = `
+                <h2 class="quiz-result-header">${profiles[topFounder].name}</h2>
+                <p class="quiz-result-description">${profiles[topFounder].description}</p>
+                <p class="quiz-result-approach"><strong>Your Core Approach:</strong> ${profiles[topFounder].approach}</p>
+            `;
+
+            // Add contemporary philosophy if significant
+            if (hasStrongContemporary) {
+                const contemporaryPhilosophy = profiles[topContemporary[0]];
+                resultHtml += `
+                    <div style="margin-top: 25px; padding: 20px; background: #f0fdf4; border-left: 4px solid #10b981; border-radius: 8px;">
+                        <h3 style="color: #059669; font-size: 1.3rem; margin-bottom: 10px;">🌱 Your Contemporary Perspective</h3>
+                        <h4 style="color: #047857; font-size: 1.1rem; margin-bottom: 8px;">${contemporaryPhilosophy.name}</h4>
+                        <p style="color: #065f46; line-height: 1.6; margin-bottom: 10px;">${contemporaryPhilosophy.description}</p>
+                        <p style="color: #047857; font-style: italic;"><strong>Your Modern Approach:</strong> ${contemporaryPhilosophy.approach}</p>
+                    </div>
+                `;
+            }
+
+            // Add second founder if close
+            if (secondFounder && sortedFounders[1][1] >= sortedFounders[0][1] * 0.7) {
+                const secondPhilosophy = profiles[secondFounder];
+                resultHtml += `
+                    <div style="margin-top: 20px; padding: 15px; background: #fef3c7; border-left: 4px solid #f59e0b; border-radius: 8px;">
+                        <h4 style="color: #d97706; font-size: 1rem; margin-bottom: 8px;">You also strongly align with: ${secondPhilosophy.name}</h4>
+                        <p style="color: #92400e; font-size: 0.9rem; line-height: 1.5;">${secondPhilosophy.approach}</p>
+                    </div>
+                `;
+            }
+
+            // Build scores HTML with all philosophies
+            let scoresHtml = '<h4 style="margin-bottom: 10px; color: #059669;">Historical Foundations:</h4>';
+            sortedFounders.forEach(([key, value]) => {
+                const maxScore = sortedFounders[0][1];
+                const percentage = (value / maxScore) * 100;
+                scoresHtml += `
+                    <div class="score-item">
+                        <div class="score-label">
+                            <span class="score-name">${names[key]}</span>
+                            <span class="score-points">${value} points</span>
+                        </div>
+                        <div class="score-bar">
+                            <div class="score-bar-fill" style="width: ${percentage}%; background: #10b981;"></div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            if (sortedContemporary.length > 0) {
+                scoresHtml += '<h4 style="margin: 20px 0 10px 0; color: #0891b2;">Contemporary Perspectives:</h4>';
+                sortedContemporary.forEach(([key, value]) => {
+                    const maxContemporary = sortedContemporary[0][1];
+                    const percentage = (value / maxContemporary) * 100;
+                    scoresHtml += `
+                        <div class="score-item">
+                            <div class="score-label">
+                                <span class="score-name">${names[key]}</span>
+                                <span class="score-points">${value} points</span>
+                            </div>
+                            <div class="score-bar">
+                                <div class="score-bar-fill" style="width: ${percentage}%; background: #0891b2;"></div>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+
+            document.getElementById('quizQuestions').style.display = 'none';
+            document.getElementById('quizResults').style.display = 'block';
+            document.getElementById('quizResults').innerHTML = `
+                ${resultHtml}
+
+                <div class="quiz-scores">
+                    <h3>Your Complete Philosophy Profile:</h3>
+                    ${scoresHtml}
+                </div>
+
+                <div class="quiz-note">
+                    <strong>Understanding Your Results:</strong>
+                    <p>Your profile shows both your alignment with historical conservation founders and contemporary environmental philosophies. The most effective approaches often blend traditional wisdom with modern insights, adapting to today's complex environmental challenges. Consider how your various perspectives can work together to inform your environmental values and actions.</p>
+                </div>
+
+                <button class="quiz-restart-btn" onclick="startQuiz()">Take Quiz Again</button>
+            `;
+        }: {
                     name: "Ecological Awareness (Rachel Carson)",
                     description: "You align with Rachel Carson's philosophy of ecological interconnection and precaution. You recognize that everything in nature is connected, and human interventions can have far-reaching, unintended consequences. You advocate for rigorous science, careful study of long-term impacts, and questioning technologies that promise progress but may cause hidden harm. You believe in protecting the web of life and maintaining ecological balance.",
                     approach: "Precautionary and interconnected thinking"
