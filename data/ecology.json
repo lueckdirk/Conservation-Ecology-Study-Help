@@ -1,0 +1,115 @@
+{
+  "population-ecology": [
+    {
+      "type": "multiple-choice",
+      "question": "Which population growth model assumes unlimited resources?",
+      "options": ["Logistic growth", "Exponential growth", "Geometric growth", "Linear growth"],
+      "answer": "Exponential growth",
+      "explanation": "Exponential growth (dN/dt = rN) assumes unlimited resources, while logistic growth accounts for carrying capacity."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "The maximum number of individuals an environment can support is called its _____.",
+      "answer": "carrying capacity",
+      "acceptableAnswers": ["carrying capacity", "K"],
+      "explanation": "Carrying capacity (K) is the maximum population size that the environment can sustain indefinitely."
+    },
+    {
+      "type": "true-false",
+      "question": "r-selected species typically have high parental care and few offspring.",
+      "answer": false,
+      "explanation": "False. r-selected species have many offspring with low parental care. K-selected species have few offspring with high parental care."
+    },
+    {
+      "type": "short-answer",
+      "question": "What are the four main factors that regulate population size?",
+      "answer": "Birth rate (natality), death rate (mortality), immigration (individuals moving in), and emigration (individuals moving out)",
+      "keyPoints": ["birth", "death", "immigration", "emigration"]
+    }
+  ],
+  "community-ecology": [
+    {
+      "type": "multiple-choice",
+      "question": "What type of interaction occurs when one species benefits and the other is unaffected?",
+      "options": ["Mutualism", "Commensalism", "Parasitism", "Competition"],
+      "answer": "Commensalism",
+      "explanation": "Commensalism (+/0): one benefits, other unaffected. Mutualism (+/+), Parasitism (+/-), Competition (-/-)."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "A _____ species has a disproportionately large effect on its environment relative to its abundance.",
+      "answer": "keystone",
+      "acceptableAnswers": ["keystone"],
+      "explanation": "Keystone species maintain ecosystem structure and diversity despite low abundance (e.g., sea otters, wolves)."
+    },
+    {
+      "type": "true-false",
+      "question": "Primary succession begins on bare rock with no soil.",
+      "answer": true,
+      "explanation": "True. Primary succession starts on substrates without soil (bare rock, lava). Secondary succession occurs after disturbance in areas with existing soil."
+    },
+    {
+      "type": "short-answer",
+      "question": "Describe the energy pyramid in ecosystems and why energy decreases at each level.",
+      "answer": "Energy pyramids show that only about 10% of energy is transferred between trophic levels. Energy is lost as heat through metabolism, movement, and inefficient consumption/digestion.",
+      "keyPoints": ["10%", "trophic levels", "heat loss", "metabolism"]
+    }
+  ],
+  "ecosystem-ecology": [
+    {
+      "type": "multiple-choice",
+      "question": "Which biogeochemical cycle does NOT have an atmospheric component?",
+      "options": ["Carbon cycle", "Nitrogen cycle", "Phosphorus cycle", "Water cycle"],
+      "answer": "Phosphorus cycle",
+      "explanation": "Phosphorus cycles through rocks, soil, water, and organisms but has no significant atmospheric phase."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "The process by which bacteria convert atmospheric nitrogen into ammonia is called nitrogen _____.",
+      "answer": "fixation",
+      "acceptableAnswers": ["fixation"],
+      "explanation": "Nitrogen fixation converts N₂ gas into ammonia (NH₃), making nitrogen available to plants."
+    },
+    {
+      "type": "true-false",
+      "question": "Gross Primary Production (GPP) minus Respiration (R) equals Net Primary Production (NPP).",
+      "answer": true,
+      "explanation": "True. NPP = GPP - R. NPP is the energy available to consumers after plants use some for their own respiration."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the primary source of energy for most ecosystems?",
+      "options": ["Geothermal heat", "Chemical energy", "Solar radiation", "Tidal energy"],
+      "answer": "Solar radiation",
+      "explanation": "Sunlight drives photosynthesis in most ecosystems. Exceptions include deep-sea hydrothermal vent communities."
+    }
+  ],
+  "behavioral-ecology": [
+    {
+      "type": "multiple-choice",
+      "question": "Which mating system involves one male mating with multiple females?",
+      "options": ["Monogamy", "Polygyny", "Polyandry", "Promiscuity"],
+      "answer": "Polygyny",
+      "explanation": "Polygyny: one male, multiple females. Polyandry: one female, multiple males. Monogamy: one-to-one pairing."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "Behaviors that reduce an individual's fitness while increasing another's fitness are called _____ behaviors.",
+      "answer": "altruistic",
+      "acceptableAnswers": ["altruistic", "altruism"],
+      "explanation": "Altruism can evolve through kin selection (Hamilton's rule: rB > C) when helping relatives."
+    },
+    {
+      "type": "true-false",
+      "question": "Optimal foraging theory predicts that animals should maximize energy intake per unit time.",
+      "answer": true,
+      "explanation": "True. Optimal foraging theory suggests animals balance energy gained from food against the costs of obtaining it."
+    },
+    {
+      "type": "short-answer",
+      "question": "What is Hamilton's rule and what does each variable represent?",
+      "answer": "rB > C, where r = coefficient of relatedness, B = benefit to recipient, C = cost to altruist. Altruism evolves when the genetic benefit to relatives exceeds the cost to the helper.",
+      "keyPoints": ["rB > C", "relatedness", "benefit", "cost", "kin selection"]
+    }
+  ]
+}
