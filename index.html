@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaced Repetition Study App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: white;
+        }
+
+        .stat-box strong {
+            display: block;
+            font-size: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+
+        .subject-filter {
+            margin-bottom: 20px;
+        }
+
+        .subject-filter label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .subject-filter select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: white;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        .subject-filter select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .question-container {
+            display: none;
+        }
+
+        .question-container.active {
+            display: block;
+        }
+
+        .card-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .question {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            min-height: 100px;
+        }
+
+        .answer {
+            display: none;
+            padding: 20px;
+            background: #f8f9ff;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .answer.show {
+            display: block;
+        }
+
+        .answer-label {
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+
+        .show-answer-btn {
+            width: 100%;
+            padding: 15px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .show-answer-btn:hover {
+            background: #5568d3;
+        }
+
+        .show-answer-btn.hidden {
+            display: none;
+        }
+
+        .difficulty-buttons {
+            display: none;
+            gap: 10px;
+        }
+
+        .difficulty-buttons.show {
+            display: flex;
+        }
+
+        .diff-btn {
+            flex: 1;
+            padding: 15px 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .diff-btn .interval {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .diff-again {
+            background: #ef4444;
+            color: white;
+        }
+
+        .diff-again:hover {
+            background: #dc2626;
+        }
+
+        .diff-hard {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .diff-hard:hover {
+            background: #d97706;
+        }
+
+        .diff-good {
+            background: #10b981;
+            color: white;
+        }
+
+        .diff-good:hover {
+            background: #059669;
+        }
+
+        .diff-easy {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .diff-easy:hover {
+            background: #2563eb;
+        }
+
+        .no-cards {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .no-cards.hidden {
+            display: none;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Spaced Repetition Study</h1>
+            <div class="stats">
+                <div class="stat-box">
+                    <strong id="dueCount">0</strong>
+                    <span>Due</span>
+                </div>
+                <div class="stat-box">
+                    <strong id="newCount">0</strong>
+                    <span>New</span>
+                </div>
+                <div class="stat-box">
+                    <strong id="reviewCount">0</strong>
+                    <span>Reviewed</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="subject-filter">
+                <label for="subjectSelect">Select Subject:</label>
+                <select id="subjectSelect">
+                    <option value="all">All Subjects</option>
+                </select>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+            </div>
+
+            <div class="no-cards" id="noCards">
+                <h2>🎉 All done for now!</h2>
+                <p>Check back later or select a different subject.</p>
+            </div>
+
+            <div class="question-container" id="questionContainer">
+                <div class="card-info">
+                    <span id="cardType">New Card</span>
+                    <span id="cardNumber">Card 1 of 10</span>
+                </div>
+
+                <div class="question" id="question">
+                    Loading question...
+                </div>
+
+                <button class="show-answer-btn" id="showAnswerBtn">Show Answer</button>
+
+                <div class="answer" id="answer">
+                    <div class="answer-label">Answer:</div>
+                    <div id="answerText"></div>
+                </div>
+
+                <div class="difficulty-buttons" id="difficultyButtons">
+                    <button class="diff-btn diff-again" data-difficulty="again">
+                        <span>Again</span>
+                        <span class="interval">&lt;10m</span>
+                    </button>
+                    <button class="diff-btn diff-hard" data-difficulty="hard">
+                        <span>Hard</span>
+                        <span class="interval" id="hardInterval">1d</span>
+                    </button>
+                    <button class="diff-btn diff-good" data-difficulty="good">
+                        <span>Good</span>
+                        <span class="interval" id="goodInterval">3d</span>
+                    </button>
+                    <button class="diff-btn diff-easy" data-difficulty="easy">
+                        <span>Easy</span>
+                        <span class="interval" id="easyInterval">7d</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Spaced Repetition Algorithm (SM-2 inspired)
+        class SpacedRepetitionSystem {
+            constructor() {
+                this.cards = [];
+                this.currentCard = null;
+                this.sessionStats = { reviewed: 0 };
+                this.loadProgress();
+            }
+
+            loadProgress() {
+                const saved = localStorage.getItem('srProgress');
+                if (saved) {
+                    const data = JSON.parse(saved);
+                    this.cards = data.cards || [];
+                    this.sessionStats = data.sessionStats || { reviewed: 0 };
+                }
+            }
+
+            saveProgress() {
+                localStorage.setItem('srProgress', JSON.stringify({
+                    cards: this.cards,
+                    sessionStats: this.sessionStats
+                }));
+            }
+
+            initializeCards(questions, subject) {
+                const existingIds = new Set(this.cards.map(c => c.id));
+                
+                questions.forEach((q, idx) => {
+                    const id = `${subject}-${idx}`;
+                    if (!existingIds.has(id)) {
+                        this.cards.push({
+                            id: id,
+                            subject: subject,
+                            question: q.question,
+                            answer: q.answer,
+                            interval: 0,
+                            repetitions: 0,
+                            easeFactor: 2.5,
+                            dueDate: new Date(),
+                            lastReview: null
+                        });
+                    }
+                });
+                this.saveProgress();
+            }
+
+            getDueCards(subject = 'all') {
+                const now = new Date();
+                return this.cards.filter(card => {
+                    const matchesSubject = subject === 'all' || card.subject === subject;
+                    const isDue = new Date(card.dueDate) <= now;
+                    return matchesSubject && isDue;
+                }).sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
+            }
+
+            getNewCards(subject = 'all') {
+                return this.cards.filter(card => {
+                    const matchesSubject = subject === 'all' || card.subject === subject;
+                    return matchesSubject && card.repetitions === 0;
+                }).length;
+            }
+
+            calculateInterval(card, difficulty) {
+                let newInterval, newEaseFactor, newRepetitions;
+
+                switch(difficulty) {
+                    case 'again':
+                        newInterval = 0.01; // 10 minutes
+                        newRepetitions = 0;
+                        newEaseFactor = Math.max(1.3, card.easeFactor - 0.2);
+                        break;
+                    
+                    case 'hard':
+                        if (card.repetitions === 0) {
+                            newInterval = 1;
+                        } else {
+                            newInterval = card.interval * 1.2;
+                        }
+                        newRepetitions = card.repetitions + 1;
+                        newEaseFactor = Math.max(1.3, card.easeFactor - 0.15);
+                        break;
+                    
+                    case 'good':
+                        if (card.repetitions === 0) {
+                            newInterval = 1;
+                        } else if (card.repetitions === 1) {
+                            newInterval = 3;
+                        } else {
+                            newInterval = card.interval * card.easeFactor;
+                        }
+                        newRepetitions = card.repetitions + 1;
+                        newEaseFactor = card.easeFactor;
+                        break;
+                    
+                    case 'easy':
+                        if (card.repetitions === 0) {
+                            newInterval = 4;
+                        } else {
+                            newInterval = card.interval * card.easeFactor * 1.3;
+                        }
+                        newRepetitions = card.repetitions + 1;
+                        newEaseFactor = card.easeFactor + 0.15;
+                        break;
+                }
+
+                return { newInterval, newEaseFactor, newRepetitions };
+            }
+
+            reviewCard(card, difficulty) {
+                const { newInterval, newEaseFactor, newRepetitions } = this.calculateInterval(card, difficulty);
+                
+                card.interval = newInterval;
+                card.easeFactor = newEaseFactor;
+                card.repetitions = newRepetitions;
+                card.lastReview = new Date();
+                
+                const dueDate = new Date();
+                dueDate.setDate(dueDate.getDate() + newInterval);
+                card.dueDate = dueDate;
+                
+                this.sessionStats.reviewed++;
+                this.saveProgress();
+            }
+
+            getNextIntervals(card) {
+                const intervals = {};
+                ['hard', 'good', 'easy'].forEach(diff => {
+                    const { newInterval } = this.calculateInterval(card, diff);
+                    intervals[diff] = this.formatInterval(newInterval);
+                });
+                return intervals;
+            }
+
+            formatInterval(days) {
+                if (days < 1) {
+                    return `${Math.round(days * 24 * 60)}m`;
+                } else if (days < 30) {
+                    return `${Math.round(days)}d`;
+                } else if (days < 365) {
+                    return `${Math.round(days / 30)}mo`;
+                } else {
+                    return `${Math.round(days / 365)}y`;
+                }
+            }
+        }
+
+        // Sample questions data structure
+        const questionsBySubject = {
+            'conservation-biology': [
+                {
+                    question: 'What are the three main value systems that influence conservation decisions?',
+                    answer: 'The three main value systems are: 1) Intrinsic values (inherent worth of nature), 2) Instrumental values (direct and indirect use values, option value, nonuse value), and 3) Relational values (personal identity, social responsibility, biophilia, aesthetic values)'
+                },
+                {
+                    question: 'What is the difference between habitat loss, habitat fragmentation, and habitat degradation?',
+                    answer: 'Habitat loss is the complete disappearance of ecosystems. Habitat fragmentation is the subdivision of larger habitat into smaller patches within a landscape. Habitat degradation is human activities that make remaining habitat patches less conducive to life (pollution, desertification, erosion).'
+                },
+                {
+                    question: 'Explain the species-area relationship and its equation.',
+                    answer: 'The species-area relationship (S = CA^z) describes the empirical relationship between habitat area and number of species. S is species richness, A is area, C is a constant, and z is the scaling factor (typically 0.15-0.35) that shows how species richness changes with area.'
+                },
+                {
+                    question: 'What are the four hypotheses that explain how alien species become established in novel environments?',
+                    answer: '1) Enemy release hypothesis - freed from natural predators/pathogens, 2) Novel weapons hypothesis - biochemical advantages over natives, 3) Empty niche hypothesis - exploit unused resources, 4) Evolution of increased competitive ability (EICA) - reallocate energy from defense to growth/reproduction'
+                },
+                {
+                    question: 'What is Maximum Sustainable Yield (MSY) and at what population size does it occur?',
+                    answer: 'MSY is the largest harvest that can be taken from a population without depleting it over time. It occurs at N = K/2 (half the carrying capacity) where the population growth rate is highest. MSY = rK/4'
+                }
+            ],
+            'extinctions': [
+                {
+                    question: 'What are the IUCN Red List categories for species conservation status?',
+                    answer: 'The eight categories are: Extinct (EX), Extinct in the Wild (EW), Critically Endangered (CR), Endangered (EN), Vulnerable (VU), Near Threatened (NT), Least Concern (LC), and Data Deficient (DD). CR, EN, and VU are collectively called "threatened species."'
+                },
+                {
+                    question: 'What is the current rate of extinction compared to the background rate?',
+                    answer: 'The current extinction rate is approximately 2.28 E/MSY (extinctions per million species years), which is 2-23 times higher than the background rate of 0.1-1 E/MSY throughout Earth\'s history.'
+                },
+                {
+                    question: 'What are the four proximate drivers of species extinction according to the Living Planet Index?',
+                    answer: 'The four proximate drivers are: 1) Habitat loss and degradation (primary cause), 2) Overexploitation, 3) Invasive species and disease (particularly for amphibians and reptiles), 4) Climate change'
+                }
+            ],
+            'invasive-species': [
+                {
+                    question: 'What is the difference between an alien species and an invasive alien species (IAS)?',
+                    answer: 'An alien species is any species occurring outside its natural range with human assistance. An invasive alien species (IAS) is distinguished by its negative impact on native ecosystems, biodiversity, or economy.'
+                },
+                {
+                    question: 'Describe the three phases of IAS spread after establishment.',
+                    answer: 'The three phases are: 1) Lag phase - period between establishment and start of expansion (can be substantial), 2) Exponential growth phase - rapid population increase and spread, 3) Saturation phase - growth slows as carrying capacity is approached'
+                },
+                {
+                    question: 'What was the estimated global cost of invasive alien species in 2019?',
+                    answer: 'The global cost was US$423 billion in 2019. Costs have quadrupled every decade since 1970, with greatest impacts on infrastructure, agriculture, and forestry.'
+                }
+            ]
+        };
+
+        // Initialize the app
+        const srs = new SpacedRepetitionSystem();
+        let currentSubject = 'all';
+        let dueCards = [];
+        let currentIndex = 0;
+
+        // DOM elements
+        const subjectSelect = document.getElementById('subjectSelect');
+        const questionContainer = document.getElementById('questionContainer');
+        const noCards = document.getElementById('noCards');
+        const questionEl = document.getElementById('question');
+        const answerEl = document.getElementById('answer');
+        const answerTextEl = document.getElementById('answerText');
+        const showAnswerBtn = document.getElementById('showAnswerBtn');
+        const difficultyButtons = document.getElementById('difficultyButtons');
+        const cardTypeEl = document.getElementById('cardType');
+        const cardNumberEl = document.getElementById('cardNumber');
+        const progressFill = document.getElementById('progressFill');
+        const dueCountEl = document.getElementById('dueCount');
+        const newCountEl = document.getElementById('newCount');
+        const reviewCountEl = document.getElementById('reviewCount');
+
+        // Initialize subjects in dropdown
+        Object.keys(questionsBySubject).forEach(subject => {
+            const option = document.createElement('option');
+            option.value = subject;
+            option.textContent = subject.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+            subjectSelect.appendChild(option);
+            
+            // Initialize cards for this subject
+            srs.initializeCards(questionsBySubject[subject], subject);
+        });
+
+        // Update stats
+        function updateStats() {
+            dueCards = srs.getDueCards(currentSubject);
+            const newCards = srs.getNewCards(currentSubject);
+            
+            dueCountEl.textContent = dueCards.length;
+            newCountEl.textContent = newCards;
+            reviewCountEl.textContent = srs.sessionStats.reviewed;
+            
+            const progress = dueCards.length > 0 ? ((currentIndex / dueCards.length) * 100) : 100;
+            progressFill.style.width = `${progress}%`;
+        }
+
+        // Show current card
+        function showCard() {
+            if (currentIndex >= dueCards.length) {
+                questionContainer.classList.remove('active');
+                noCards.classList.remove('hidden');
+                return;
+            }
+
+            const card = dueCards[currentIndex];
+            srs.currentCard = card;
+
+            questionContainer.classList.add('active');
+            noCards.classList.add('hidden');
+
+            questionEl.textContent = card.question;
+            answerTextEl.textContent = card.answer;
+            
+            cardTypeEl.textContent = card.repetitions === 0 ? 'New Card' : `Review (${card.repetitions} times)`;
+            cardNumberEl.textContent = `Card ${currentIndex + 1} of ${dueCards.length}`;
+
+            // Reset UI
+            answerEl.classList.remove('show');
+            showAnswerBtn.classList.remove('hidden');
+            difficultyButtons.classList.remove('show');
+
+            // Update interval predictions
+            const intervals = srs.getNextIntervals(card);
+            document.getElementById('hardInterval').textContent = intervals.hard;
+            document.getElementById('goodInterval').textContent = intervals.good;
+            document.getElementById('easyInterval').textContent = intervals.easy;
+
+            updateStats();
+        }
+
+        // Event listeners
+        showAnswerBtn.addEventListener('click', () => {
+            answerEl.classList.add('show');
+            showAnswerBtn.classList.add('hidden');
+            difficultyButtons.classList.add('show');
+        });
+
+        document.querySelectorAll('.diff-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const difficulty = btn.dataset.difficulty;
+                srs.reviewCard(srs.currentCard, difficulty);
+                currentIndex++;
+                showCard();
+            });
+        });
+
+        subjectSelect.addEventListener('change', (e) => {
+            currentSubject = e.target.value;
+            currentIndex = 0;
+            showCard();
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (answerEl.classList.contains('show')) {
+                if (e.key === '1') document.querySelector('[data-difficulty="again"]').click();
+                if (e.key === '2') document.querySelector('[data-difficulty="hard"]').click();
+                if (e.key === '3') document.querySelector('[data-difficulty="good"]').click();
+                if (e.key === '4') document.querySelector('[data-difficulty="easy"]').click();
+            } else if (e.key === ' ') {
+                e.preventDefault();
+                showAnswerBtn.click();
+            }
+        });
+
+        // Start the app
+        showCard();
+    </script>
+</body>
+</html>
