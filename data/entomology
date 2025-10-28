@@ -1,0 +1,161 @@
+{
+  "insect-taxonomy": [
+    {
+      "type": "multiple-choice",
+      "question": "Which insect order is characterized by mandibles, enlarged hind femora, and tegmina?",
+      "options": ["Orthoptera", "Phasmatodea", "Dermaptera", "Mantodea"],
+      "answer": "Orthoptera",
+      "explanation": "Orthoptera includes grasshoppers and crickets, known for their jumping legs (enlarged hind femora), chewing mouthparts (mandibles), and leathery forewings (tegmina)."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "The insect family with digging forelegs adapted for burrowing is _____.",
+      "answer": "Gryllotalpidae",
+      "acceptableAnswers": ["Gryllotalpidae"],
+      "explanation": "Gryllotalpidae, or mole crickets, have specialized forelegs for digging."
+    },
+    {
+      "type": "true-false",
+      "question": "Tettigoniidae have short antennae and flattened wings.",
+      "answer": false,
+      "explanation": "False. Tettigoniidae (katydids) have long antennae and tent-like wings."
+    },
+    {
+      "type": "short-answer",
+      "question": "List three distinguishing features of the order Phasmatodea.",
+      "answer": "Stick-like body, no jumping legs, cerci are 1-segmented.",
+      "keyPoints": ["stick-like", "no jumping legs", "1-segmented cerci"]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which order includes insects with forceps-like cerci?",
+      "options": ["Dermaptera", "Plecoptera", "Zoraptera", "Embiidina"],
+      "answer": "Dermaptera",
+      "explanation": "Dermaptera (earwigs) are known for their forceps-like cerci at the end of the abdomen."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "The order with pleated hindwings and soft, flattened bodies is _____.",
+      "answer": "Plecoptera",
+      "acceptableAnswers": ["Plecoptera"],
+      "explanation": "Plecoptera (stoneflies) have pleated hindwings and a soft, flattened body."
+    },
+    {
+      "type": "true-false",
+      "question": "Embiidina spin silk using their enlarged foretarsus.",
+      "answer": true,
+      "explanation": "True. Embiidina have an enlarged basal foretarsus segment used for silk production."
+    },
+    {
+      "type": "short-answer",
+      "question": "Describe two key traits of Zoraptera.",
+      "answer": "They are very small (<3 mm) and have 9-segmented moniliform antennae.",
+      "keyPoints": ["<3 mm", "9-segmented", "moniliform antennae"]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which order is known for raptorial forelegs and the ability to 'look over the shoulder'?",
+      "options": ["Mantodea", "Blattodea", "Orthoptera", "Phasmatodea"],
+      "answer": "Mantodea",
+      "explanation": "Mantodea (mantises) have raptorial forelegs and a flexible neck that allows them to turn their head."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "The suborder of Blattodea that includes termites is called _____.",
+      "answer": "Isoptera",
+      "acceptableAnswers": ["Isoptera"],
+      "explanation": "Isoptera is the termite suborder, known for social behavior and equal-sized wings."
+    },
+    {
+      "type": "true-false",
+      "question": "Blaberidae are typically brown and wingless.",
+      "answer": false,
+      "explanation": "False. Blaberidae are often green and may have wings."
+    },
+    {
+      "type": "short-answer",
+      "question": "Name the four main cockroach families and one distinguishing trait for each.",
+      "answer": "Blaberidae (green), Blattellidae (includes German cockroach), Blattidae (includes Oriental and American cockroaches), Polyphagidae (wingless).",
+      "keyPoints": ["Blaberidae", "Blattellidae", "Blattidae", "Polyphagidae"]
+    },
+    
+{
+      "type": "multiple-choice",
+      "question": "Which Hemiptera suborder includes aquatic bugs like water striders and backswimmers?",
+      "options": ["Heteroptera", "Auchenorrhyncha", "Sternorrhyncha", "Thysanoptera"],
+      "answer": "Heteroptera",
+      "explanation": "Heteroptera includes many aquatic families such as Gerridae (water striders) and Notonectidae (backswimmers)."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "The family of Hemiptera known for giant water bugs is _____.",
+      "answer": "Belostomatidae",
+      "acceptableAnswers": ["Belostomatidae"],
+      "explanation": "Belostomatidae are large aquatic predators commonly called giant water bugs."
+    },
+    {
+      "type": "true-false",
+      "question": "Pentatomidae are commonly known as stink bugs.",
+      "answer": true,
+      "explanation": "True. Pentatomidae are shield-shaped bugs that release a foul odor when disturbed."
+    },
+    {
+      "type": "short-answer",
+      "question": "Name three families in Heteroptera that are aquatic.",
+      "answer": "Belostomatidae, Corixidae, Notonectidae",
+      "keyPoints": ["Belostomatidae", "Corixidae", "Notonectidae"]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which suborder includes cicadas and leafhoppers?",
+      "options": ["Auchenorrhyncha", "Heteroptera", "Sternorrhyncha", "Psocodea"],
+      "answer": "Auchenorrhyncha",
+      "explanation": "Auchenorrhyncha includes Cicadidae (cicadas), Cicadellidae (leafhoppers), and others that feed on plant sap."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "The family known for froghoppers or spittlebugs is _____.",
+      "answer": "Cercopidae",
+      "acceptableAnswers": ["Cercopidae"],
+      "explanation": "Cercopidae are known for producing frothy spittle masses as nymphs."
+    },
+    {
+      "type": "true-false",
+      "question": "Membracidae are known for their enlarged pronotum that resembles thorns or other structures.",
+      "answer": true,
+      "explanation": "True. Membracidae (treehoppers) have a highly modified pronotum that can mimic plant parts."
+    },
+    {
+      "type": "short-answer",
+      "question": "List two families in Auchenorrhyncha and one distinguishing trait for each.",
+      "answer": "Cicadidae (loud sound production), Cicadellidae (jumping ability and plant feeding)",
+      "keyPoints": ["Cicadidae", "Cicadellidae", "sound", "jumping"]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which suborder includes aphids and scale insects?",
+      "options": ["Sternorrhyncha", "Auchenorrhyncha", "Heteroptera", "Psocodea"],
+      "answer": "Sternorrhyncha",
+      "explanation": "Sternorrhyncha includes Aphididae (aphids) and Superfamily Coccoidea (scale insects), both of which are plant feeders."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "The superfamily that includes scale insects is _____.",
+      "answer": "Coccoidea",
+      "acceptableAnswers": ["Coccoidea"],
+      "explanation": "Coccoidea includes scale insects, which are often sessile and covered in waxy coatings."
+    },
+    {
+      "type": "true-false",
+      "question": "Thysanoptera are commonly known as thrips and have fringed wings.",
+      "answer": true,
+      "explanation": "True. Thysanoptera (thrips) are tiny insects with fringed wings and asymmetrical mouthparts."
+    },
+    {
+      "type": "short-answer",
+      "question": "What is Psocodea and what types of insects does it include?",
+      "answer": "Psocodea includes bark lice and parasitic lice. Bark lice are free-living, while parasitic lice feed on birds and mammals.",
+      "keyPoints": ["bark lice", "parasitic lice", "Psocodea"]
+    }
+  ]
+}
