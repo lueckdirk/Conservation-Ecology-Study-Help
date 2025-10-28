@@ -156,6 +156,85 @@
       "question": "What is Psocodea and what types of insects does it include?",
       "answer": "Psocodea includes bark lice and parasitic lice. Bark lice are free-living, while parasitic lice feed on birds and mammals.",
       "keyPoints": ["bark lice", "parasitic lice", "Psocodea"]
+    },
+    
+{
+      "type": "multiple-choice",
+      "question": "Which type of eye is composed of many ommatidia and provides a wide field of view?",
+      "options": ["Simple eye", "Compound eye", "Ocellus", "Retinal eye"],
+      "answer": "Compound eye",
+      "explanation": "Compound eyes are made of multiple ommatidia and are common in adult insects, allowing for motion detection and a broad visual field."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "The hardened plates of an insect's exoskeleton are called _____.",
+      "answer": "sclerites",
+      "acceptableAnswers": ["sclerites"],
+      "explanation": "Sclerites are the rigid plates that make up the insect exoskeleton, providing protection and structure."
+    },
+    {
+      "type": "true-false",
+      "question": "Insects have three main body segments: head, thorax, and abdomen.",
+      "answer": true,
+      "explanation": "True. The insect body is divided into three tagmata: head (sensory and feeding), thorax (locomotion), and abdomen (reproduction and digestion)."
+    },
+    {
+      "type": "short-answer",
+      "question": "Name the five main parts of an insect leg.",
+      "answer": "Coxa, trochanter, femur, tibia, tarsus",
+      "keyPoints": ["coxa", "trochanter", "femur", "tibia", "tarsus"]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which mouthpart is used for piercing and sucking?",
+      "options": ["Mandibles", "Maxillae", "Proboscis", "Labium"],
+      "answer": "Proboscis",
+      "explanation": "The proboscis is a specialized mouthpart used by insects like mosquitoes and butterflies for piercing or sucking fluids."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "The process by which allele frequencies change due to random events is called genetic _____.",
+      "answer": "drift",
+      "acceptableAnswers": ["drift", "genetic drift"],
+      "explanation": "Genetic drift is a mechanism of evolution that causes random changes in allele frequencies, especially in small populations."
+    },
+    {
+      "type": "true-false",
+      "question": "Gene flow increases genetic differences between populations.",
+      "answer": false,
+      "explanation": "False. Gene flow tends to homogenize populations by introducing new alleles and reducing genetic differences."
+    },
+    {
+      "type": "short-answer",
+      "question": "List the five main drivers of evolutionary change.",
+      "answer": "Mutation, gene flow, genetic drift, sexual selection, and natural selection.",
+      "keyPoints": ["mutation", "gene flow", "genetic drift", "sexual selection", "natural selection"]
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which evolutionary innovation allowed insects to exploit aerial environments?",
+      "options": ["Metamorphosis", "Flight", "Phytophagy", "Exoskeleton"],
+      "answer": "Flight",
+      "explanation": "Flight enabled insects to escape predators, disperse widely, and access new ecological niches."
+    },
+    {
+      "type": "fill-in-blank",
+      "question": "The co-evolution of insects and flowering plants is driven by _____.",
+      "answer": "phytophagy",
+      "acceptableAnswers": ["phytophagy", "herbivory"],
+      "explanation": "Phytophagy (plant-eating) led to diversification in both insects and plants, with plant defenses and insect adaptations evolving in tandem."
+    },
+    {
+      "type": "true-false",
+      "question": "Complete metamorphosis includes a pupal stage between larva and adult.",
+      "answer": true,
+      "explanation": "True. Holometabolous insects undergo complete metamorphosis: egg → larva → pupa → adult."
+    },
+    {
+      "type": "short-answer",
+      "question": "What are three evolutionary 'sparks' that contributed to insect diversification?",
+      "answer": "Flight, metamorphosis, and co-evolution with flowering plants (phytophagy and plant defenses).",
+      "keyPoints": ["flight", "metamorphosis", "phytophagy", "plant defenses"]
     }
   ]
 }
